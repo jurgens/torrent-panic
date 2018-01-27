@@ -10,7 +10,6 @@ describe Rutracker do
 
     let(:fake_html) do
       file_fixture('search_results.html').read
-
     end
 
     before do
@@ -46,5 +45,4 @@ describe Rutracker do
       end
     end
   end
-
 end

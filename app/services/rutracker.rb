@@ -21,30 +21,27 @@ class Rutracker
     LOGIN_URL = 'https://rutracker.org/forum/login.php'
     SEARCH_URL = 'https://rutracker.org/forum/tracker.php'
 
-    USERNAME = 'gg1'
-    PASSWORD = '123456'
-
     attr_reader :username, :password
 
-    def initialize(u = USERNAME, p = PASSWORD)
+    def initialize(username, password)
       @agent = Mechanize.new
       @agent.user_agent_alias = 'Mac Safari'
-      @username = u
-      @password = p
+
+      @username = username
+      @password = password
+
       login
     end
 
     def search(keyword)
       # TODO: add search params (search only in "Movies" category)
       @agent.get "#{SEARCH_URL}?nm=#{keyword}"
-      puts ' == Requset'
       @agent.page.search('//body')
     end
 
     private
 
     def login
-      puts '== Login'
       @agent.post LOGIN_URL,
                   login_username: username,
                   login_password: password,
@@ -73,9 +70,8 @@ class Rutracker
     end
   end
 
-
-  def initialize(agent = Agent.new)
-    @agent = agent
+  def initialize(agent = nil)
+    @agent = agent || Agent.new(ENV['RUTRACKER_USERNAME'], ENV['RUTRACKER_PASSWORD'])
   end
 
   def search(title)
