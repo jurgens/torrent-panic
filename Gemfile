@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.5'
 
 # gem 'capistrano-rails', group: :development
 
+gem 'telegram-bot-ruby'
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
@@ -32,7 +35,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
