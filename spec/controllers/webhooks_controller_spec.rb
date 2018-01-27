@@ -33,6 +33,7 @@ describe WebhooksController do
   end
 
   specify '/telegram' do
+    expect(TelegramChat).to receive(:dispatch)
     post :telegram
     expect(response).to have_http_status :ok
   end

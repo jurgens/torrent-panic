@@ -1,7 +1,7 @@
 class WebhooksController < ActionController::API
 
   def telegram
-    TelegramChat.dispatch(payload.values)
+    TelegramChat.dispatch(payload)
     render head: :ok, body: nil
   end
 
