@@ -18,6 +18,17 @@ class TelegramChat
   private
 
   def command
+    chat_command || user_input
+  end
+
+  def chat_command
+    match = /\/(\w+)/.match message[:text]
+    return if match.nil?
+    return unless %w{start stop}.include? match[1]
+    "BotCommand::#{match[1].capitalize}".constantize.new(@user)
+  end
+
+  def user_input
     status = @user.status.presence || 'none'
     "BotCommand::#{status.capitalize}".constantize.new(@user)
   end
