@@ -21,8 +21,8 @@
 window.BB = {
 	cur_domain: location.hostname.replace(/.*?([^.]+\.[^.]+)$/, '$1'),
 	// keep space " : " for TLO
-	form_token : '1a386320bcc49bdfd19aef4a35e904a2',
-	opt_js: {"only_new":0,"h_flag":0,"h_av":0,"h_rnk_i":0,"h_post_i":0,"i_aft_l":0,"h_smile":0,"h_sig":0,"sp_op":0,"tr_tm":0,"h_cat":"","h_tsp":0,"hl_brak":1,"div_tag":1,"h_ta":26},
+	form_token : 'dc8e7828cb4ac463b2450561281773f3',
+	opt_js: {"only_new":0,"h_flag":0,"h_av":0,"h_rnk_i":0,"h_post_i":0,"i_aft_l":0,"h_smile":0,"h_sig":0,"sp_op":0,"tr_tm":0,"h_cat":"","h_tsp":0,"hl_brak":1,"div_tag":1,"h_ta":0},
 
 	begun_iframe_src: "//rutrk.org/iframe/begun-1.html",
 
@@ -37,7 +37,7 @@ BB.cookie_defaults = {
 	path: "/forum/",
 };
 </script>
-<link href="//static.t-ru.org/templates/v1/min/08c0b2fa54c4b3005e833cf99f582751.all.min.css" rel="stylesheet">
+<link href="//static.t-ru.org/templates/v1/min/b75ed3a1afddcaa37a41cef946401086.all.min.css" rel="stylesheet">
 <script src="//static.t-ru.org/templates/v1/min/e04e3b9d9f835bead99b58ab37daf50c.lib.min.js"></script>
 <script src="//static.t-ru.org/templates/v1/min/392ca83a37854abc9154d3caee11b2d3.bb.min.js"></script>
 
@@ -144,7 +144,7 @@ BB.cookie_defaults = {
 
 			
 			<div id="logo">
-				<table>
+				<table style="height: 141px;">
 				<tr>
 					<td id="logo-td" style="padding: 3px 7px 3px 15px;">
 						<a href="index.php" class="site-logo-link">
@@ -197,7 +197,7 @@ $(function () {
 										<td class="w50">
 						<div class="logged-in-as-wrap">
 							<span class="logged-in-as-cap">Вы зашли как:</span>
-							<a class="logged-in-as-uname" href="https://rutracker.org/forum/profile.php?mode=viewprofile&amp;u=776511"><b class="med">jurgen.smirnoff</b></a>
+							<a class="logged-in-as-uname" href="https://rutracker.org/forum/profile.php?mode=viewprofile&amp;u=17433344"><b class="med">gg1</b></a>
 							[
 							<a href="#" onclick="return post2url('login.php', {logout: 1});">Выход</a>
 							]
@@ -209,7 +209,7 @@ $(function () {
 							
 							<form id="quick-search" method="post" action="#">
 								<input type="hidden" name="max" value="1">
-								<input id="search-text" type="text" name="nm" value="" tabindex="1" accesskey="q">
+								<input id="search-text" type="text" name="nm" value="Blade Runner 2049" tabindex="1" accesskey="q">
 								<select id="search-menu" tabindex="2">
 									<option value="search-tr" data-action="tracker.php" selected> раздачи</option>
 																		<option value="search-all" data-action="search.php"> все темы</option>
@@ -228,12 +228,12 @@ $(function () {
 						<div>
 							<a href="privmsg.php?folder=inbox" class="">ЛС (новых нет)</a>
 							&#0183;
-							<a href="https://rutracker.org/forum/profile.php?mode=viewprofile&amp;u=776511">Профиль</a>
+							<a href="https://rutracker.org/forum/profile.php?mode=viewprofile&amp;u=17433344">Профиль</a>
 							<a href="#dls-menu" class="menu-root menu-alt1">
 								<img src="//static.t-ru.org/templates/v1/images/menu_open_1.gif" class="menu-alt1" alt="\/">
 							</a>
 							&#0183;
-							<a href="search.php?uid=776511">Мои сообщения</a>
+							<a href="search.php?uid=17433344">Мои сообщения</a>
 						</div>
 					</td>
 					
@@ -244,7 +244,7 @@ $(function () {
 						<div class="menu-sub" id="dls-menu">
 				<div class="menu-a bold nowrap">
 					<a class="med" href="profile.php?mode=editprofile">Настройки</a>
-					<a class="med" href="tracker.php?rid=776511">Мои раздачи</a>
+					<a class="med" href="tracker.php?rid=17433344">Мои раздачи</a>
 					<a class="med" href="search.php?future_dls">Будущие закачки</a>
 				</div>
 			</div>
@@ -284,7 +284,7 @@ $(function () {
 	<td class="w100 vBottom">
 		<h1 class="maintitle">Трекер</h1>
 		<p class="small" style="margin: 12px 4px 8px;"><b>Страницы: &nbsp;1</b></p>
-		<p class="med bold" style="margin: 12px 4px 10px;">Результатов поиска: 0 <span class="normal">(max: 500)</span></p>
+		<p class="med bold" style="margin: 12px 4px 10px;">Результатов поиска: 35 <span class="normal">(max: 500)</span></p>
 
 		<table class="w100" style="padding: 2px;">
 			<tr>
@@ -1794,7 +1794,7 @@ $(function() {
 	<legend>Название содержит</legend>
 	<div>
 		<p class="input">
-			<input id="title-search" style="width: 95%;" class="post" type="text" size="50" maxlength="100" name="nm" value="" autocomplete="on">
+			<input id="title-search" style="width: 95%;" class="post" type="text" size="50" maxlength="100" name="nm" value="Blade Runner 2049" autocomplete="on">
 		</p>
 		<p class="chbox med" style="padding-top: 3px;">
 			<span class="a-like med" id="cse-search-btn" data-query_input_id="title-search">Поиск в Google</span> &nbsp;&middot;&nbsp;
@@ -1950,10 +1950,777 @@ div.t-tags span:hover {
 </tr>
 </thead>
 <tbody>
-
-<tr>
-	<td class="row1 tCenter pad_12" colspan="10">Выберите раздел и нажмите &laquo;Поиск&raquo;</td>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=185">Звуковые дорожки и Переводы</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5512328" class="med tLink hl-tags bold" href="viewtopic.php?t=5512328">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, фантастика, триллер, драма, детектив, DTS-HD MA] Dub</a>
+		</div>
+		<div id="tg-5512328" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=2841490">Loud_Swir</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>5175648424</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5512328">4.82&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>7</u><b class="seedmed">7</b></td>
+	<td class="row4 leechmed" title="Личи"><b>1</b></td>
+	<td class="row4 small number-format">36</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1516999923</u>
+				<p>26-Янв-18</p>
+		<p>22:52</p>	</td>
 </tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=93">DVD Video</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5510935" class="med tLink hl-tags bold" href="viewtopic.php?t=5510935">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve)[2017, США, фантастика, триллер, драма, Blu-Ray&gt;DVD5 (Custom)] DUB+Eng+Sub rus,eng</a>
+		</div>
+		<div id="tg-5510935" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=13604994">Bobropandavar</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>4696705024</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5510935">4.37&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>23</u><b class="seedmed">23</b></td>
+	<td class="row4 leechmed" title="Личи"><b>3</b></td>
+	<td class="row4 small number-format">302</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1516709523</u>
+				<p>23-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=7">Зарубежное кино</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5510489" class="med tLink hl-tags bold" href="viewtopic.php?t=5510489">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, Фантастика, триллер, драма, детектив, BDRip-AVC] Dub + Sub Rus, Eng + Original Eng</a>
+		</div>
+		<div id="tg-5510489" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=31832068">ivan-bleyd</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>2887840205</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5510489">2.69&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>95</u><b class="seedmed">95</b></td>
+	<td class="row4 leechmed" title="Личи"><b>26</b></td>
+	<td class="row4 small number-format">1248</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1516622152</u>
+				<p>22-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2198">HD Video</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5508010" class="med tLink hl-tags bold" href="viewtopic.php?t=5508010">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, Фантастика, Триллер, Драма, Детектив, UHD Blu-ray disc (custom) 2160p] Dub + Sub Rus,Eng + Original Eng</a>
+		</div>
+		<div id="tg-5508010" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=15240532">pirs18</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>79578162531</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5508010">74.11&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>46</u><b class="seedmed">46</b></td>
+	<td class="row4 leechmed" title="Личи"><b>25</b></td>
+	<td class="row4 small number-format">1331</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1516168969</u>
+				<p>17-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2198">HD Video</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5507728" class="med tLink hl-tags bold" href="viewtopic.php?t=5507728">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, детектив, BDRip 1080p] Dub + VO (Есарев) + Ukr + Original (Eng) + Sub (Rus, Ukr, Eng)</a>
+		</div>
+		<div id="tg-5507728" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=16329819">almetyevec</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>21615994406</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5507728">20.13&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>115</u><b class="seedmed">115</b></td>
+	<td class="row4 leechmed" title="Личи"><b>17</b></td>
+	<td class="row4 small number-format">1737</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1516101577</u>
+				<p>16-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2198">HD Video</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5507323" class="med tLink hl-tags bold" href="viewtopic.php?t=5507323">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, Фантастика, Триллер, Драма, Детектив, BDRemux 1080p] [US Transfer] Dub + VO + Sub Rus, Eng + Original Eng</a>
+		</div>
+		<div id="tg-5507323" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=22091203">DemоnizeR</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>35206263065</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5507323">32.79&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>67</u><b class="seedmed">67</b></td>
+	<td class="row4 leechmed" title="Личи"><b>13</b></td>
+	<td class="row4 small number-format">1087</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1516029980</u>
+				<p>15-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=185">Звуковые дорожки и Переводы</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5506094" class="med tLink hl-tags bold" href="viewtopic.php?t=5506094">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, фантастика, триллер, драма, детектив, AC3, NTSC] VO (Дмитрий Есарев)</a>
+		</div>
+		<div id="tg-5506094" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=29846856">Aspirant99</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>786227200</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5506094">749.8&nbsp;MB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>7</u><b class="seedmed">7</b></td>
+	<td class="row4 leechmed" title="Личи"><b>0</b></td>
+	<td class="row4 small number-format">153</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515789512</u>
+				<p>12-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2198">HD Video</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5505250" class="med tLink hl-tags bold" href="viewtopic.php?t=5505250">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, BDRip 720p] Dub + Original (Eng) + Sub (Rus, Eng)</a>
+		</div>
+		<div id="tg-5505250" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=1404039">Nitey</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>6054494603</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5505250">5.64&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>250</u><b class="seedmed">250</b></td>
+	<td class="row4 leechmed" title="Личи"><b>29</b></td>
+	<td class="row4 small number-format">5493</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515614198</u>
+				<p>10-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=101">Зарубежное кино (DVD)</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5504545" class="med tLink hl-tags bold" href="viewtopic.php?t=5504545">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve)[2017, США, фантастика, триллер, драма, Blu-Ray&gt;DVD9 (Custom)] DUB+Eng+Sub rus,eng</a>
+		</div>
+		<div id="tg-5504545" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=13604994">Bobropandavar</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>8479723520</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5504545">7.9&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>20</u><b class="seedmed">20</b></td>
+	<td class="row4 leechmed" title="Личи"><b>3</b></td>
+	<td class="row4 small number-format">719</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515595965</u>
+				<p>10-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=352">3D/Стерео Кино, Видео, TV и Спорт</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5504211" class="med tLink hl-tags bold" href="viewtopic.php?t=5504211">Бегущий по лезвию 2049 в 3Д / Blade Runner 2049 3D (Дени Вильнёв / Denis Villeneuve) [2017, Фантастика, Триллер, Драма, Детектив, BDrip, 1080p] OverUnder / Вертикальная стереопара</a>
+		</div>
+		<div id="tg-5504211" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=16955967">SeRoGa00</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>17978897009</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5504211">16.74&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>27</u><b class="seedmed">27</b></td>
+	<td class="row4 leechmed" title="Личи"><b>4</b></td>
+	<td class="row4 small number-format">562</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515591791</u>
+				<p>10-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=352">3D/Стерео Кино, Видео, TV и Спорт</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5503239" class="med tLink hl-tags bold" href="viewtopic.php?t=5503239">Бегущий по лезвию 2049 в 3Д / Blade Runner 2049 3D (Дени Вильнёв / Denis Villeneuve) [2017, Фантастика, триллер, BDremux, 1080p] BD3D</a>
+		</div>
+		<div id="tg-5503239" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=34993256">emweka</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>44020203520</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5503239">41&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>8</u><b class="seedmed">8</b></td>
+	<td class="row4 leechmed" title="Личи"><b>4</b></td>
+	<td class="row4 small number-format">332</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515339519</u>
+				<p>7-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=847">Трейлеры и дополнительные материалы к фильмам</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5503773" class="med tLink hl-tags bold" href="viewtopic.php?t=5503773">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, Фантастика | Триллер | Драма, BDRip 720p] дополнительные материалы</a>
+		</div>
+		<div id="tg-5503773" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=31955027">AlcohoLiTTO</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>3033163077</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5503773">2.82&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>23</u><b class="seedmed">23</b></td>
+	<td class="row4 leechmed" title="Личи"><b>3</b></td>
+	<td class="row4 small number-format">596</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515325833</u>
+				<p>7-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2198">HD Video</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5503727" class="med tLink hl-tags bold" href="viewtopic.php?t=5503727">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, BDRip 1080p] Dub + Original (Eng) + Sub (Rus, Eng)</a>
+		</div>
+		<div id="tg-5503727" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=1404039">Nitey</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>12228460806</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5503727">11.39&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>410</u><b class="seedmed">410</b></td>
+	<td class="row4 leechmed" title="Личи"><b>46</b></td>
+	<td class="row4 small number-format">9446</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515319691</u>
+				<p>7-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=352">3D/Стерео Кино, Видео, TV и Спорт</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5503329" class="med tLink hl-tags bold" href="viewtopic.php?t=5503329">Бегущий по лезвию 2049 в 3Д / Blade Runner 2049 3D (Дени Вильнёв / Denis Villeneuve) [2017, Фантастика, Триллер, Драма, Детектив, BDrip] Half OverUnder / Вертикальная анаморфная стереопара</a>
+		</div>
+		<div id="tg-5503329" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=6797043">Ash61</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>11616835117</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5503329">10.82&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>139</u><b class="seedmed">139</b></td>
+	<td class="row4 leechmed" title="Личи"><b>19</b></td>
+	<td class="row4 small number-format">3111</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515245304</u>
+				<p>6-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501302" class="med tLink hl-tags bold" href="viewtopic.php?t=5501302">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, Фантастика, Триллер, Драма, BDRip] Dub + Sub (Rus, Eng) + Original Eng</a>
+		</div>
+		<div id="tg-5501302" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8679101">порошков</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>3150928668</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501302">2.93&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>476</u><b class="seedmed">476</b></td>
+	<td class="row4 leechmed" title="Личи"><b>17</b></td>
+	<td class="row4 small number-format">13800</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515230914</u>
+				<p>6-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=352">3D/Стерео Кино, Видео, TV и Спорт</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502960" class="med tLink hl-tags bold" href="viewtopic.php?t=5502960">Бегущий по лезвию 2049 в 3Д / Blade Runner 2049 3D (Дени Вильнёв/ Denis Villeneuve) [2017, Фантастика, триллер, BDRemux, 1080p] BD3D</a>
+		</div>
+		<div id="tg-5502960" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=15240532">pirs18</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>47248900096</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502960">44&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>35</u><b class="seedmed">35</b></td>
+	<td class="row4 leechmed" title="Личи"><b>11</b></td>
+	<td class="row4 small number-format">1154</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515174492</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502481" class="med tLink hl-tags bold" href="viewtopic.php?t=5502481">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, BDRip-AVC] Dub + Original + Sub (rus, eng)</a>
+		</div>
+		<div id="tg-5502481" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=5738326">AFM</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>3102758263</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502481">2.89&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>129</u><b class="seedmed">129</b></td>
+	<td class="row4 leechmed" title="Личи"><b>8</b></td>
+	<td class="row4 small number-format">3662</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515166916</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502907" class="med tLink hl-tags bold" href="viewtopic.php?t=5502907">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, BDRip-AVC] Dub + Original + Sub (rus, eng)</a>
+		</div>
+		<div id="tg-5502907" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=5738326">AFM</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>4460405143</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502907">4.15&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>158</u><b class="seedmed">158</b></td>
+	<td class="row4 leechmed" title="Личи"><b>17</b></td>
+	<td class="row4 small number-format">4651</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515166066</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501327" class="med tLink hl-tags bold" href="viewtopic.php?t=5501327">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, BDRip-AVC] Dub + Original + Sub (rus, eng)</a>
+		</div>
+		<div id="tg-5501327" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=5738326">AFM</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>2338983524</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501327">2.18&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>474</u><b class="seedmed">474</b></td>
+	<td class="row4 leechmed" title="Личи"><b>36</b></td>
+	<td class="row4 small number-format">10879</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515161525</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=1936">Фильмы HD для Apple TV</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502791" class="med tLink hl-tags bold" href="viewtopic.php?t=5502791">[ATV3] Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve ) [2017, США, Великобритания, Венгрия, Канада , Фантастика, триллер, драма, детектив, BDRip, HD (1080p)] DUB + Original + sub (rus, eng)</a>
+		</div>
+		<div id="tg-5502791" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8204144">pk5360114</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>11799905290</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502791">10.99&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>98</u><b class="seedmed">98</b></td>
+	<td class="row4 leechmed" title="Личи"><b>8</b></td>
+	<td class="row4 small number-format">2878</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515147446</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=185">Звуковые дорожки и Переводы</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502775" class="med tLink hl-tags bold" href="viewtopic.php?t=5502775">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, Фантастика, Триллер, Драма, Детектив, AC3] VO (Solod)</a>
+		</div>
+		<div id="tg-5502775" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=41401740">eugeen.solod</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>549237248</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502775">523.8&nbsp;MB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>2</u><b class="seedmed">2</b></td>
+	<td class="row4 leechmed" title="Личи"><b>1</b></td>
+	<td class="row4 small number-format">99</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515144382</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501331" class="med tLink hl-tags bold" href="viewtopic.php?t=5501331">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Фантастика, триллер, драма, BDRip] Dub</a>
+		</div>
+		<div id="tg-5501331" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=13980964">dalemake</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>1567260672</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501331">1.46&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>224</u><b class="seedmed">224</b></td>
+	<td class="row4 leechmed" title="Личи"><b>10</b></td>
+	<td class="row4 small number-format">7248</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515142994</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501355" class="med tLink hl-tags bold" href="viewtopic.php?t=5501355">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, BDRip-AVC] Dub + Sub (rus)</a>
+		</div>
+		<div id="tg-5501355" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=15853549">Stalker oK</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>1514992180</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501355">1.41&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>1719</u><b class="seedmed">1719</b></td>
+	<td class="row4 leechmed" title="Личи"><b>79</b></td>
+	<td class="row4 small number-format">47458</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515117100</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=1936">Фильмы HD для Apple TV</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502684" class="med tLink hl-tags bold" href="viewtopic.php?t=5502684">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve ) [2017, США, Великобритания, Венгрия, Канада , Фантастика, триллер, драма, детектив, BDRip, HD (720p)] DUB + Original + sub (rus, eng)</a>
+		</div>
+		<div id="tg-5502684" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8204144">pk5360114</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>6266632009</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502684">5.84&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>31</u><b class="seedmed">31</b></td>
+	<td class="row4 leechmed" title="Личи"><b>9</b></td>
+	<td class="row4 small number-format">1031</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515108737</u>
+				<p>5-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=313">Зарубежное кино (HD Video)</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502288" class="med tLink hl-tags bold" href="viewtopic.php?t=5502288">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, фантастика, триллер, драма, Blu-ray disc 1080p] [EUR] Dub + Sub Rus, Eng + Original Eng</a>
+		</div>
+		<div id="tg-5502288" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8679101">порошков</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>43696920737</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502288">40.7&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>160</u><b class="seedmed">160</b></td>
+	<td class="row4 leechmed" title="Личи"><b>26</b></td>
+	<td class="row4 small number-format">5437</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515079419</u>
+				<p>4-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2198">HD Video</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5502370" class="med tLink hl-tags bold" href="viewtopic.php?t=5502370">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Канада, Фантастика, триллер, BDRip 720p] Dub (Blu-Ray EUR) + Sub Rus, Eng + Original Eng</a>
+		</div>
+		<div id="tg-5502370" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=41882410">Secrets</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>9359161048</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5502370">8.72&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>125</u><b class="seedmed">125</b></td>
+	<td class="row4 leechmed" title="Личи"><b>15</b></td>
+	<td class="row4 small number-format">4111</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1515061286</u>
+				<p>4-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=1908">Фильмы для iPod, iPhone, iPad</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501942" class="med tLink hl-tags bold" href="viewtopic.php?t=5501942">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve ) [2017, США, Великобритания, Венгрия, Канада , Фантастика, триллер, драма, детектив, WEB-DLRip, SD (480p)] DUB + Original + sub (rus, ukr, eng)</a>
+		</div>
+		<div id="tg-5501942" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8204144">pk5360114</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>2067706491</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501942">1.93&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>27</u><b class="seedmed">27</b></td>
+	<td class="row4 leechmed" title="Личи"><b>1</b></td>
+	<td class="row4 small number-format">1001</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1514978322</u>
+				<p>3-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="не проверено"><span class="tor-icon tor-not-approved">*</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=1908">Фильмы для iPod, iPhone, iPad</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501695" class="med tLink hl-tags bold" href="viewtopic.php?t=5501695">[iPad] Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve ) [2017, США, Великобритания, Венгрия, Канада , Фантастика, триллер, драма, детектив, WEB-DLRip, SD (576p)] DUB + Original + sub (rus, ukr, eng)</a>
+		</div>
+		<div id="tg-5501695" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8204144">pk5360114</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>3173257468</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501695">2.96&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>37</u><b class="seedmed">37</b></td>
+	<td class="row4 leechmed" title="Личи"><b>6</b></td>
+	<td class="row4 small number-format">1202</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1514916392</u>
+				<p>2-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=1936">Фильмы HD для Apple TV</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501521" class="med tLink hl-tags bold" href="viewtopic.php?t=5501521">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve ) [2017, США, Великобритания, Венгрия, Канада , Фантастика, триллер, драма, детектив, WEB-DL, HD (720p)] DUB + Original + sub (rus, ukr, eng)</a>
+		</div>
+		<div id="tg-5501521" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8204144">pk5360114</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>6524938677</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501521">6.08&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>21</u><b class="seedmed">21</b></td>
+	<td class="row4 leechmed" title="Личи"><b>4</b></td>
+	<td class="row4 small number-format">1024</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1514888472</u>
+				<p>2-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=1936">Фильмы HD для Apple TV</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501349" class="med tLink hl-tags bold" href="viewtopic.php?t=5501349">[ATV3] Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve ) [2017, США, Великобритания, Венгрия, Канада , Фантастика, триллер, драма, детектив, WEB-DL, HD (1080p)] DUB + Original + sub (rus, ukr, eng)</a>
+		</div>
+		<div id="tg-5501349" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=8204144">pk5360114</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>7127101491</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501349">6.64&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>107</u><b class="seedmed">107</b></td>
+	<td class="row4 leechmed" title="Личи"><b>7</b></td>
+	<td class="row4 small number-format">5699</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1514851002</u>
+				<p>2-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5501322" class="med tLink hl-tags bold" href="viewtopic.php?t=5501322">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, Фантастика, Триллер, Драма, WEB-DLRip] Dub (iTunes) + Sub Rus</a>
+		</div>
+		<div id="tg-5501322" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=12906592">XLL47</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>2343195642</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5501322">2.18&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>67</u><b class="seedmed">67</b></td>
+	<td class="row4 leechmed" title="Личи"><b>6</b></td>
+	<td class="row4 small number-format">2183</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1514842497</u>
+				<p>1-Янв-18</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1" alt="N"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=2200">Фильмы 2016-2017</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5499781" class="med tLink hl-tags bold" href="viewtopic.php?t=5499781">Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, Великобритания, Венгрия, Канада, Фантастика, Триллер, Драма, WEB-DLRip] Original Eng + Rus Sub (FOCS) + Eng Sub</a>
+		</div>
+		<div id="tg-5499781" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=11255978">Parabellumm</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>1567141061</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5499781">1.46&nbsp;GB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>1021</u><b class="seedmed">1021</b></td>
+	<td class="row4 leechmed" title="Личи"><b>66</b></td>
+	<td class="row4 small number-format">45052</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1514558024</u>
+				<p>29-Дек-17</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1" alt="o"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=786">Саундтреки к зарубежным фильмам (lossless)</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5482014" class="med tLink hl-tags bold" href="viewtopic.php?t=5482014">(Score) Бегущий по лезвию 2049 / Blade Runner 2049 (by Hans Zimmer &amp; Benjamin Wallfisch) - 2017, FLAC (tracks+.cue) lossless</a>
+		</div>
+		<div id="tg-5482014" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=4201630">kasatkal</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>582320276</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5482014">555.3&nbsp;MB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>65</u><b class="seedmed">65</b></td>
+	<td class="row4 leechmed" title="Личи"><b>12</b></td>
+	<td class="row4 small number-format">2034</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1512330440</u>
+				<p>3-Дек-17</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1" alt="o"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=786">Саундтреки к зарубежным фильмам (lossless)</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5462401" class="med tLink hl-tags bold" href="viewtopic.php?t=5462401">(Score) [WEB] Бегущий по лезвию 2049 / Blade Runner 2049 (by Hans Zimmer &amp; Benjamin Wallfisch) - 2017, FLAC (tracks), lossless</a>
+		</div>
+		<div id="tg-5462401" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=11601804">оybrc</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>502392628</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5462401">479.1&nbsp;MB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>130</u><b class="seedmed">130</b></td>
+	<td class="row4 leechmed" title="Личи"><b>19</b></td>
+	<td class="row4 small number-format">6593</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1507230174</u>
+				<p>5-Окт-17</p>
+			</td>
+</tr>
+<tr class="tCenter hl-tr">
+	<td class="row1 t-ico"><img src="//static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1" alt="o"></td>
+	<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">&radic;</span></td>
+	<td class="row1 f-name"><div class="f-name"><a class="gen f" href="tracker.php?f=785">Саундтреки к зарубежным фильмам (lossy)</a></div></td>
+	<td class="row4 med tLeft t-title">
+		<div class="wbr t-title">
+									<a data-topic_id="5462114" class="med tLink hl-tags bold" href="viewtopic.php?t=5462114">(Score) Бегущий по лезвию 2049 / Blade Runner 2049 (by Hans Zimmer &amp; Benjamin Wallfisch) - 2017, MP3, 320 kbps</a>
+		</div>
+		<div id="tg-5462114" class="t-tags"></div>
+	</td>
+	<td class="row1 u-name"><div class="wbr u-name"><a class="med" href="tracker.php?pid=12264836">Soloid</a></div></td>
+	<td class="row4 small nowrap tor-size">
+		<u>227865780</u>
+		<a class="small tr-dl dl-stub" href="dl.php?t=5462114">217.3&nbsp;MB &#8595;</a>	</td>
+	<td class="row4 nowrap"><u>305</u><b class="seedmed">305</b></td>
+	<td class="row4 leechmed" title="Личи"><b>20</b></td>
+	<td class="row4 small number-format">9635</td>
+	<td class="row4 small nowrap" style="padding: 1px 3px 2px;">
+		<u>1507189351</u>
+				<p>5-Окт-17</p>
+			</td>
+</tr>
+
 </tbody>
 <tfoot>
 <tr>
@@ -2090,6 +2857,8 @@ $(function(){
 	$('#tor-tbl').tablesorter(); //	{debug: true}
 	$('.number-format').numberFormat();
 
+		$('a.f, a.pg').each(function(){ this.href += '&nm=Blade+Runner+2049'; });
+	$('a.s-all-f, a.s-all-tr').each(function(){ this.href += '?nm=Blade+Runner+2049'; });
 			// лимит на количество выбранных разделов
 	BB.fs_last_val = $('#fs-main').val();
 
@@ -2170,7 +2939,7 @@ $(function(){
 		}
 	});
 	$('#my-releases-btn').on('click', function(){
-		$('#my-releases-input').attr({name: 'pid'}).val('776511');
+		$('#my-releases-input').attr({name: 'pid'}).val('17433344');
 		$('#tr-form').submit();
 	});
 });

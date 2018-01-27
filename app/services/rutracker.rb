@@ -1,31 +1,53 @@
 class Rutracker
 
-  def initialize
+  class Item
+    include ActiveModel::Model
 
+    attr_accessor :title, :link, :status
+
+    def link=(href)
+      @link = "https://rutracker.org/forum/#{href}"
+    end
   end
 
-  def detect(title)
-    rows = table_scan
+  def initialize(title)
+    @title = title
+  end
 
-    rows.select do |row|
-      detect_title(row, title)
+  def items
+    @items ||= begin
+      rows.map do |row|
+        detect_title(row, @title)
+      end.reject(&:blank?)
     end
-
-    rows.any?
   end
 
   private
 
-  def table_scan
-    search_results_page
+  def rows
+    search_results_html.css('#tor-tbl .hl-tr')
   end
 
   def detect_title(row, title)
+    if row.css('.tLink').present? && row.css('.tLink').present? && row.css('.t-ico[title]').present?
+      Item.new(
+        title: row.css('.tLink')[0].text,
+        link: row.css('.tLink')[0]['href'],
+        status: row.css('.t-ico[title]')[0]['title']
+      )
+    end
+  end
 
+  def search_results_html
+    Nokogiri::HTML(
+      search_results_page.force_encoding("cp1251").encode("utf-8", undef: :replace)
+    )
   end
 
   def search_results_page
-    binding.pry
-    File.open(Rails.root)
+    # require 'open-uri'
+    # @html ||= open("http://www.threescompany.com/")
+    @html ||= ''
   end
+
 end
