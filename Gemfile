@@ -11,10 +11,9 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'nokogiri'
-
+gem 'pg', '~> 0.1'
 gem 'mechanize' # The Mechanize library is used for automating interaction with websites.
-
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -46,5 +45,11 @@ group :development do
   # gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard'
   gem 'guard-rspec'
+
+  gem 'capistrano', '~> 3.0',     require: false
+  gem 'capistrano-rails',         require: false
+  gem 'capistrano-rvm',           require: false
+  gem 'capistrano-passenger',     require: false
+  gem 'capistrano-sidekiq',       require: false
 end
 
