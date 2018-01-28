@@ -35,7 +35,7 @@ class Rutracker
 
     def search(keyword)
       # TODO: add search params (search only in "Movies" category)
-      @agent.get "#{SEARCH_URL}?nm=#{keyword}"
+      @agent.get "#{SEARCH_URL}?f=124,2198,22,33,352,4,7,921,93&nm=#{keyword}"
       @agent.page.search('//body')
     end
 
