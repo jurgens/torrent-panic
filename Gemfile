@@ -46,5 +46,11 @@ group :development do
   # gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard'
   gem 'guard-rspec'
+
+  gem 'capistrano', '~> 3.0',     require: false
+  gem 'capistrano-rails',         require: false
+  gem 'capistrano-rvm',           require: false
+  gem 'capistrano-passenger',     require: false
+  gem 'capistrano-sidekiq',       require: false
 end
 
