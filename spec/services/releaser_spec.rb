@@ -5,18 +5,18 @@ describe Releaser do
   let(:tracker) { double :tracker }
   let(:releases) do
     [
-        {
+        Rutracker::Item.new({
             title: 'Blade Runner 2049 version 1',
             link: 'http://rutracker.com/page1',
             seeds: 10,
             status: :not_approved
-        },
-        {
+        }),
+        Rutracker::Item.new({
             title: 'Blade Runner 2049 version 2',
             link: 'http://rutracker.com/page2',
             seeds: 2,
             status: :not_approved
-        }
+        })
     ]
   end
 

@@ -8,6 +8,8 @@ module BotCommand
           "You already tracking \"#{movie.title}\""
         else
           Wish.create user: user, movie: movie
+          ReleaserWorker.perform_in 1, movie.id
+
           "Okay, started tracking \"#{movie.title}\""
         end
       else
