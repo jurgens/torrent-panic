@@ -50,11 +50,11 @@ describe TelegramChat do
       TelegramChat.dispatch(movie_payload)
     end
 
-    specify 'with valid movie title should create a new Wish for a user' do
-      movie = create :movie, title: 'Pulp Fiction'
-      TelegramChat.dispatch(start_payload)
-      expect{ TelegramChat.dispatch(movie_payload) }.to change(Wish, :count).to(1)
-    end
+    # specify 'with valid movie title should create a new Wish for a user' do
+    #   movie = create :movie, title: 'Pulp Fiction'
+    #   TelegramChat.dispatch(start_payload)
+    #   expect{ TelegramChat.dispatch(movie_payload) }.to change(Wish, :count).to(1)
+    # end
   end
 
 end

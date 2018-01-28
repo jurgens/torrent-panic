@@ -4,6 +4,10 @@ class Movie < ApplicationRecord
 
   CRAWL_INTERVAL = 24.hours
 
+  def full_title
+    [title, year].compact.join(', ')
+  end
+
   def recently_crawled?
     return false if crawled_at.nil?
     crawled_at > CRAWL_INTERVAL.ago

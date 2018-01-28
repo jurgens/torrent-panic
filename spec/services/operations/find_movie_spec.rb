@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Movies::Finder do
+describe Operations::FindMovie do
   let(:user) { create :user }
 
   specify "process" do

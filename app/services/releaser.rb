@@ -7,7 +7,12 @@ class Releaser
 
   def process
     search_for_new_releases
-    Notifier.new(@movie).process if @movie.releases.any?
+    return if @movie.releases.empty?
+
+    movie.wishes.each do |wish|
+      Notifier.new(wish.user, movie).process
+      wish.touch :notified_at
+    end
   end
 
   def tracker

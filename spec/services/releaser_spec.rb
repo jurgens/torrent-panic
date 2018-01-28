@@ -33,12 +33,20 @@ describe Releaser do
       end
 
       specify 'should trigger notifications' do
+        wish = create :wish, movie: movie
         expect(Notifier).to receive_message_chain(:new, :process)
         Releaser.new(movie).process
       end
 
       specify 'should update movie.crawled_at' do
         expect { Releaser.new(movie).process }.to change { movie.crawled_at }
+      end
+
+      specify 'should fulfill a wish' do
+        create :release, movie: movie
+        wish = create :wish, movie: movie
+
+        expect { Releaser.new(movie).process }.to change{ wish.reload.notified_at }.from(nil)
       end
     end
 
