@@ -13,6 +13,7 @@ module BotCommand
           "Okay, started tracking \"#{movie.title}\""
         end
       else
+        FinderWorker.perform_in 1, input, user.id
         "Looking up \"#{input}\"..."
       end
 

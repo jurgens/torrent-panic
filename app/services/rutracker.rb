@@ -94,6 +94,8 @@ class Rutracker
       seeds: row.css('.seedmed')[0].text,
       status: row.css('.t-ico[title]')[0]['title']
     )
+    rescue
+      nil
   end
 
 end

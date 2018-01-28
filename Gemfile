@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'telegram-bot-ruby'
 gem 'dotenv-rails'
+gem 'sidekiq'
+gem 'themoviedb'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
