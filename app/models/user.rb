@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Recent
+
   has_many :wishes
 
   validates :telegram_id, uniqueness: true
