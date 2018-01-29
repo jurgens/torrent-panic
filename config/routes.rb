@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
   post '/webhooks/:action', controller: "webhooks"
 
+  namespace :admin do
+    get '/' => 'dashboard#index'
+  end
 end

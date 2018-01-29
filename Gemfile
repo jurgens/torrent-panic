@@ -37,6 +37,7 @@ end
 
 group :test do
   gem "factory_bot_rails", "~> 4.0"
+  gem 'capybara'
 end
 
 group :development do
