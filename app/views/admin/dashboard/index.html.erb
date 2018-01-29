@@ -1,1 +1,15 @@
-Welcome, Admin
+<h1 class="display-2">Dashboard</h1>
+
+<dl class="row">
+  <dt class="col-sm-3"><h4>Users</h4></dt>
+  <dd class="col-sm-3"><h4><%=@dashboard.users %></h4></dd>
+
+  <dt class="col-sm-3"><h4>Movies</h4></dt>
+  <dd class="col-sm-3"><h4><%=@dashboard.movies %></h4></dd>
+
+  <dt class="col-sm-3"><h4>Users (last week)</h4></dt>
+  <dd class="col-sm-3"><h4><%=@dashboard.users_delta %></h4></dd>
+
+  <dt class="col-sm-3"><h4>Movies (last week)</h4></dt>
+  <dd class="col-sm-3"><h4><%=@dashboard.movies_delta %><h4></dd>
+</dl>

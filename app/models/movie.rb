@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  include Recent
+
   has_many :releases, dependent: :delete_all
   has_many :wishes, dependent: :delete_all
 
