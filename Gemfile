@@ -24,6 +24,7 @@ gem 'sidekiq'
 gem 'themoviedb'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'rollbar'
 
 # gem 'redis', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
