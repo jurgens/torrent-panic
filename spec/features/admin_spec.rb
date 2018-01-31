@@ -5,6 +5,9 @@ describe 'Admin Area' do
 
   specify 'dashboard' do
     visit '/admin/'
-    expect(page).to have_content 'Welcome, Admin'
+
+    within 'h1' do
+      expect(page).to have_content 'Dashboard'
+    end
   end
 end

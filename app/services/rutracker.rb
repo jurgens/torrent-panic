@@ -21,6 +21,41 @@ class Rutracker
     LOGIN_URL = 'https://rutracker.org/forum/login.php'
     SEARCH_URL = 'https://rutracker.org/forum/tracker.php'
 
+    CATEGORIES = [
+        187, # Классика мирового кинематографа
+        2090, # Фильмы до 1990 года
+        2221, # Фильмы 1991-2000
+        2091, # Фильмы 2001-2005
+        2092, # Фильмы 2006-2010
+        2093, # Фильмы 2011-2015
+        2200, # Фильмы 2016-2017
+        1950, # Фильмы 2018
+        2540, # Фильмы Ближнего Зарубежья
+        934, # Азиатские фильмы
+        505, # Индийское кино
+        212, # Сборники фильмов
+        941, # Кино СССР
+        1666, # Детские отечественные фильмы
+        376, # Авторские дебюты
+        905, # Классика мирового кинематографа (DVD Video)
+        1576, # Азиатские фильмы (DVD Video)
+        101, # Зарубежное кино (DVD)
+        100, # Наше кино (DVD)
+        572, # Арт-хаус и авторское кино (DVD)
+        2199, # Классика мирового кинематографа (HD Video)
+        313, # Зарубежное кино (HD Video)
+        2201, # Азиатские фильмы (HD Video)
+        312, # Наше кино (HD Video)
+        2339, # Арт-хаус и авторское кино (HD Video)
+        2343, # Отечественные мультфильмы (HD Video)
+        930, # Иностранные мультфильмы (HD Video)
+        2365, # Иностранные короткометражные мультфильмы (HD Video)
+        1900, # Отечественные мультфильмы (DVD)
+        521, # Иностранные мультфильмы (DVD)
+        539, # Отечественные полнометражные мультфильмы
+        209, # Иностранные мультфильмы
+    ]
+
     attr_reader :username, :password
 
     def initialize(username, password)
@@ -35,11 +70,19 @@ class Rutracker
 
     def search(keyword)
       # TODO: add search params (search only in "Movies" category)
-      @agent.get "#{SEARCH_URL}?f=124,2198,22,33,352,4,7,921,93&nm=#{keyword}"
+      @agent.get "#{SEARCH_URL}?#{params(keyword)}"
       @agent.page.search('//body')
     end
 
     private
+
+    def params(keyword)
+      {
+          f: CATEGORIES.join(','),
+          nm: keyword,
+          o: 10 # order by seeds
+      }.to_query
+    end
 
     def login
       @agent.post LOGIN_URL,

@@ -12,16 +12,12 @@ RSpec.describe Rutracker::Agent, type: :model do
       allow_any_instance_of(Mechanize).to receive_message_chain('page.search')
     end
 
-    let(:expected_searh_url) do
-      "https://rutracker.org/forum/tracker.php?f=124,2198,22,33,352,4,7,921,93&nm=#{keyword}"
-    end
-
     subject do
       agent.search(keyword)
     end
 
     it 'should call search only in Movie category' do
-      expect_any_instance_of(Mechanize).to receive(:get).with(expected_searh_url)
+      expect_any_instance_of(Mechanize).to receive(:get)
       subject
     end
 
