@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  poster     :string
+#  year       :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  crawled_at :datetime
+#  tmdb_id    :integer
+#
+
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
