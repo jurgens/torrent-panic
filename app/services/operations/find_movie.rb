@@ -26,7 +26,7 @@ module Operations
     end
 
     def movie
-      local_search || tmdb_search
+      @movie ||= local_search || tmdb_search
     end
 
     def local_search
@@ -36,10 +36,13 @@ module Operations
     def tmdb_search
       results = Tmdb::Movie.find @title
       return if results.empty?
-      create_movie results.first
+      find_or_create_movie results.first
     end
 
-    def create_movie(data)
+    def find_or_create_movie(data)
+      @movie = Movie.find_by tmdb_id: data.id
+      return @movie if @movie.present?
+
       attributes = {
           tmdb_id: data.id,
           title: data.original_title,
