@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
+  it { should have_many :releases }
+
   context 'recently_crawled?' do
     specify 'for new movie' do
       movie = Movie.new

@@ -38,6 +38,7 @@ end
 group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'capybara'
+  gem 'shoulda-matchers'
 end
 
 group :development do
