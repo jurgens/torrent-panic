@@ -23,9 +23,8 @@ describe Rutracker do
     end
 
     context 'when RuTracker return good response' do
-
       it 'returns proper structure of "releases"' do
-        expect(subject.count).to eq(35)
+        expect(subject.count).to eq(5)
         expect(subject.first).to have_attributes(
           title: 'Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, фантастика, триллер, драма, детектив, DTS-HD MA] Dub',
           status: :not_approved,

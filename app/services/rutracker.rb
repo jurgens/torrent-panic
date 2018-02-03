@@ -16,6 +16,7 @@ require 'mechanize'
 #
 # TODO: make it namespace Rutracker::Agent, Rutracker::Item, Rutracker::Client
 class Rutracker
+  TOP = 5
 
   class Agent
     LOGIN_URL = 'https://rutracker.org/forum/login.php'
@@ -80,7 +81,7 @@ class Rutracker
       {
           f: CATEGORIES.join(','),
           nm: keyword,
-          o: 10 # order by seeds
+          o: 4 # order by number of downloads
       }.to_query
     end
 
@@ -149,7 +150,7 @@ class Rutracker
   def items(html)
     html.css('#tor-tbl .hl-tr').map do |row|
       parse_item(row)
-    end.reject(&:blank?)
+    end.reject(&:blank?).slice(0, TOP)
   end
 
   def parse_item(row)
@@ -161,8 +162,8 @@ class Rutracker
       size: parse_size(row.css('a.dl-stub')[0].text),
       downloads: row.css('.number-format')[0].text.to_i
     )
-    # rescue
-    #   nil
+  rescue
+    nil
   end
 
   def parse_size(size)
