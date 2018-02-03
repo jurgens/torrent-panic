@@ -102,7 +102,7 @@ class Rutracker
 
     DEFAULT_STATUS = :not_approved
 
-    attr_accessor :title, :link, :status, :seeds
+    attr_accessor :title, :link, :status, :seeds, :size, :downloads
 
     def link=(href)
       @link = "https://rutracker.org/forum/#{href}"
@@ -112,6 +112,28 @@ class Rutracker
       @status = STATUSES.fetch(status, DEFAULT_STATUS)
     end
   end
+
+  class SizeParser
+    def self.parse(size)
+      matcher = size.match /([\d\.]+)\s*(\w{2})/
+      return 0 unless matcher.present?
+
+      number = matcher[1].to_f
+      measurement = matcher[2]
+
+      case measurement
+        when 'GB'
+          then number * 1000
+        when 'MB'
+          then number
+        when 'KB'
+          then number / 1000
+        else
+          0
+      end.round
+    end
+  end
+
 
   def initialize(agent = nil)
     @agent = agent || Agent.new(ENV['RUTRACKER_USERNAME'], ENV['RUTRACKER_PASSWORD'])
@@ -134,11 +156,18 @@ class Rutracker
     Item.new(
       title: row.css('.tLink')[0].text,
       link: row.css('.tLink')[0]['href'],
-      seeds: row.css('.seedmed')[0].text,
-      status: row.css('.t-ico[title]')[0]['title']
+      seeds: row.css('.seedmed')[0].text.to_i,
+      status: row.css('.t-ico[title]')[0]['title'],
+      size: parse_size(row.css('a.dl-stub')[0].text),
+      downloads: row.css('.number-format')[0].text.to_i
     )
-    rescue
-      nil
+    # rescue
+    #   nil
+  end
+
+  def parse_size(size)
+    size.gsub! /[\u0080-\u00ff]/, ' '
+    Rutracker::SizeParser.parse(size)
   end
 
 end

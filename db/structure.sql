@@ -12,7 +12,7 @@ FOREIGN KEY ("movie_id")
 );
 CREATE INDEX "index_wishes_on_user_id" ON "wishes" ("user_id");
 CREATE INDEX "index_wishes_on_movie_id" ON "wishes" ("movie_id");
-CREATE TABLE IF NOT EXISTS "releases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "movie_id" integer DEFAULT NULL, "title" varchar DEFAULT NULL, "status" varchar DEFAULT NULL, "link" varchar DEFAULT NULL, "magnet" varchar DEFAULT NULL, "seeds" integer);
+CREATE TABLE IF NOT EXISTS "releases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "movie_id" integer DEFAULT NULL, "title" varchar DEFAULT NULL, "status" varchar DEFAULT NULL, "link" varchar DEFAULT NULL, "magnet" varchar DEFAULT NULL, "seeds" integer, "size" integer, "downloads" integer);
 CREATE INDEX "index_releases_on_movie_id" ON "releases" ("movie_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20180127140911'),
@@ -24,6 +24,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180127213540'),
 ('20180127213918'),
 ('20180127214053'),
-('20180128001443');
+('20180128001443'),
+('20180203131847');
 
 

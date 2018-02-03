@@ -29,8 +29,10 @@ describe Rutracker do
         expect(subject.first).to have_attributes(
           title: 'Бегущий по лезвию 2049 / Blade Runner 2049 (Дени Вильнёв / Denis Villeneuve) [2017, США, фантастика, триллер, драма, детектив, DTS-HD MA] Dub',
           status: :not_approved,
-          seeds: '7',
-          link: 'https://rutracker.org/forum/viewtopic.php?t=5512328'
+          seeds: 7,
+          link: 'https://rutracker.org/forum/viewtopic.php?t=5512328',
+          size: 4820,
+          downloads: 36
         )
       end
     end
