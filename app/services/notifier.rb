@@ -10,7 +10,13 @@ class Notifier
     releases = suitable_releases_for?(@user)
     return if releases.empty?
 
-    @user.message.send_message("#{releases.count} versions available for \"#{@movie.title}\"")
+    message = [@movie.title]
+    releases.each do |release|
+      message << Releases::Presenter.new(release).description
+    end
+    message = message.join("\n\n")
+
+    @user.message.send_message message
   end
 
   private
