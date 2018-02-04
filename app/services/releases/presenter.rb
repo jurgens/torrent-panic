@@ -22,8 +22,8 @@ module Releases
     end
 
     def description
-      name = [translation, rip_type].compact.join(', ')
-      [name, size].compact.join(' - ')
+      name = [translation, rip_type].reject(&:blank?).join(', ')
+      [name, size].reject(&:blank?).join(' - ')
     end
 
     private

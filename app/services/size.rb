@@ -22,6 +22,6 @@ class Size
   end
 
   def self.print(size)
-    self.new.number_to_human_size(MEGABYTE * size)
+    self.new.number_to_human_size(MEGABYTE * size.to_i)
   end
 end

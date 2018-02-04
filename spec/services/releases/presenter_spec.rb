@@ -9,11 +9,27 @@ describe Releases::Presenter do
     let(:release_title) { 'title' }
 
     specify 'with translation, rip and size' do
-      expect(presenter).to receive(:translation).and_return('MVO')
-      expect(presenter).to receive(:rip_type).and_return('HDRip')
-      expect(presenter).to receive(:size).and_return('1.4 GB')
+      allow(presenter).to receive(:translation).and_return('MVO')
+      allow(presenter).to receive(:rip_type).and_return('HDRip')
+      allow(presenter).to receive(:size).and_return('1.4 GB')
 
       expect(presenter.description).to eq 'MVO, HDRip - 1.4 GB'
+    end
+
+    specify 'with rip and size' do
+      allow(presenter).to receive(:translation).and_return('')
+      allow(presenter).to receive(:rip_type).and_return('HDRip')
+      allow(presenter).to receive(:size).and_return('1.4 GB')
+
+      expect(presenter.description).to eq 'HDRip - 1.4 GB'
+    end
+
+    specify 'with size only' do
+      allow(presenter).to receive(:translation).and_return('')
+      allow(presenter).to receive(:rip_type).and_return('')
+      allow(presenter).to receive(:size).and_return('1.4 GB')
+
+      expect(presenter.description).to eq '1.4 GB'
     end
   end
 
