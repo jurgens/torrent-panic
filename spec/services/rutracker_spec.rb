@@ -30,7 +30,7 @@ describe Rutracker do
           status: :not_approved,
           seeds: 7,
           link: 'https://rutracker.org/forum/viewtopic.php?t=5512328',
-          size: 4820,
+          size: 4936,
           downloads: 36
         )
       end

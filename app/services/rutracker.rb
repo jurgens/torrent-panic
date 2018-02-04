@@ -114,28 +114,6 @@ class Rutracker
     end
   end
 
-  class SizeParser
-    def self.parse(size)
-      matcher = size.match /([\d\.]+)\s*(\w{2})/
-      return 0 unless matcher.present?
-
-      number = matcher[1].to_f
-      measurement = matcher[2]
-
-      case measurement
-        when 'GB'
-          then number * 1000
-        when 'MB'
-          then number
-        when 'KB'
-          then number / 1000
-        else
-          0
-      end.round
-    end
-  end
-
-
   def initialize(agent = nil)
     @agent = agent || Agent.new(ENV['RUTRACKER_USERNAME'], ENV['RUTRACKER_PASSWORD'])
   end
@@ -168,7 +146,6 @@ class Rutracker
 
   def parse_size(size)
     size.gsub! /[\u0080-\u00ff]/, ' '
-    Rutracker::SizeParser.parse(size)
+    Size.parse(size)
   end
-
 end
