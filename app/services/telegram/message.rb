@@ -11,7 +11,7 @@ module Telegram
 
     def send_message(text, options = {})
       return if Rails.env.test?
-      @api.call('sendMessage', chat_id: telegram_id, text: text)
+      @api.call('sendMessage', chat_id: telegram_id, text: text, parse_mode: 'HTML')
     rescue
       # TODO: report to rollbar
       nil
