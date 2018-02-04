@@ -13,6 +13,9 @@ class TelegramChat
     store_update_id
 
     command.process(message[:text])
+  rescue StandardError => e
+    @user.message.send_message "Oops, I couldn't process your request"
+    Rollbar.error(e)
   end
 
   private
