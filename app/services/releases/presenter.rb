@@ -7,14 +7,19 @@ module Releases
       @object = object
     end
 
+    def title
+      match || return
+      matcher[1]
+    end
+
     def translation
       match || return
-      matcher[3]
+      matcher[4]
     end
 
     def rip_type
       match || return
-      matcher[2].match(/(\S+[R|r]ip.*)$/).try(:[], 1)
+      matcher[3].match(/(\S+[R|r]ip.*)$/).try(:[], 1)
     end
 
     def size
@@ -30,8 +35,7 @@ module Releases
 
     def match
       return if object.nil?
-      @matcher = object.title.match /^.+\s*\((.+)\)\s*\[(.+)\]\s*(.*)$/
+      @matcher ||= object.title.match /^(.+)\s*\((.+)\)\s*\[(.+)\]\s*(.*)$/
     end
-
   end
 end

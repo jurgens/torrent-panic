@@ -12,7 +12,8 @@ class Notifier
 
     message = [@movie.title]
     releases.each do |release|
-      message << Releases::Presenter.new(release).description
+      presenter = Releases::Presenter.new(release)
+      message << "<b>#{presenter.title}</b>\n#{presenter.description}"
     end
     message = message.join("\n\n")
 
