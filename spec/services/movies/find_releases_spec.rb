@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Movies::FindReleases do
-  let(:movie) { create :movie, title: 'Blade Runner 2049' }
+  let(:movie) { create :movie, title: 'Blade Runner 2049', year: 2017 }
   let(:tracker) { double :tracker }
   let(:releases) do
     [
@@ -32,7 +32,7 @@ describe Movies::FindReleases do
     subject { described_class.new(movie).call }
 
     context 'with results' do
-      before { expect(tracker).to receive(:search).with('Blade Runner 2049').and_return(releases) }
+      before { expect(tracker).to receive(:search).with('Blade Runner 2049 2017').and_return(releases) }
 
       specify 'should store releases' do
         expect { subject }.to change(Release, :count).to(2)
@@ -56,7 +56,7 @@ describe Movies::FindReleases do
     end
 
     context 'with no results' do
-      before { expect(tracker).to receive(:search).with('Blade Runner 2049').and_return([]) }
+      before { expect(tracker).to receive(:search).with('Blade Runner 2049 2017').and_return([]) }
 
       specify 'with empty results should not create releases' do
         expect { subject }.not_to change(Release, :count)

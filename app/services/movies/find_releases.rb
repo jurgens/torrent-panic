@@ -9,7 +9,7 @@ module Movies
     def call
       return if @movie.recently_crawled?
 
-      releases = tracker.search @movie.title
+      releases = tracker.search "#{@movie.title} #{@movie.year}"
 
       return if releases.empty?
 
