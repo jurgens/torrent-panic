@@ -23,6 +23,9 @@ module Operations
 
         Operations::FindReleases.new(movie, @user).process
       end
+    rescue StandardError => e
+      @user.message.send_message "Oops, I couldn't process your request"
+      Rollbar.error(e)
     end
 
     def movie
