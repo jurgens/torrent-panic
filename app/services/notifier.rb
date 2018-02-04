@@ -23,6 +23,6 @@ class Notifier
 
   def suitable_releases_for?(_user)
     # TODO: find releases based on user preferences
-    @movie.releases.limit(3)
+    @movie.releases.popular.limit(3)
   end
 end
