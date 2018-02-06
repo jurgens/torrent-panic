@@ -12,17 +12,11 @@ module Telegram
     def send_message(text, options = {})
       return if Rails.env.test?
       @api.call('sendMessage', chat_id: telegram_id, text: text, parse_mode: 'HTML')
-    rescue
-      # TODO: report to rollbar
-      nil
     end
 
     def send_photo(url, caption = nil, options = {})
       return if Rails.env.test?
       @api.call('sendPhoto', chat_id: telegram_id, photo: url, caption: caption)
-    rescue
-      # TODO: report to rollbar
-      nil
     end
   end
 end

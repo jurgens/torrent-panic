@@ -25,12 +25,23 @@ module Movies
     end
 
     def build_release(item)
-      Release.new title: item.title,
-                  link: item.link,
-                  seeds: item.seeds,
-                  status: item.status,
-                  size: item.size,
-                  downloads: item.downloads
+      attributes = {
+          title: item.title,
+          link: item.link,
+          seeds: item.seeds,
+          status: item.status,
+          size: item.size,
+          downloads: item.downloads
+      }.merge(topic_data(item.topic_id))
+
+      Release.new attributes
+    end
+
+    def topic_data(topic_id)
+      tracker.topic_data topic_id
+    rescue StandardError => e
+      Rollbar.error(e)
+      {}
     end
   end
 end

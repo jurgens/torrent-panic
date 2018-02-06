@@ -21,6 +21,7 @@ class Rutracker
   class Agent
     LOGIN_URL = 'https://rutracker.org/forum/login.php'
     SEARCH_URL = 'https://rutracker.org/forum/tracker.php'
+    TOPIC_URL = 'https://rutracker.org/forum/viewtopic.php'
 
     CATEGORIES = [
         187, # Классика мирового кинематографа
@@ -75,6 +76,11 @@ class Rutracker
       @agent.page.search('//body')
     end
 
+    def topic(topic_id)
+      @agent.get "#{TOPIC_URL}?t=#{topic_id}"
+      @agent.page.search('//body')
+    end
+
     private
 
     def params(keyword)
@@ -103,7 +109,7 @@ class Rutracker
 
     DEFAULT_STATUS = :not_approved
 
-    attr_accessor :title, :link, :status, :seeds, :size, :downloads
+    attr_accessor :title, :link, :status, :seeds, :size, :downloads, :topic_id
 
     def link=(href)
       @link = "https://rutracker.org/forum/#{href}"
@@ -123,6 +129,15 @@ class Rutracker
     items(html)
   end
 
+  def topic_data(topic_id)
+    html = @agent.topic(topic_id)
+    magnet = html.css('a.magnet-link').attr('href').value
+
+    {
+        magnet: magnet
+    }
+  end
+
   private
 
   def items(html)
@@ -133,6 +148,7 @@ class Rutracker
 
   def parse_item(row)
     Item.new(
+      topic_id: parse_topic_id(row.css('a.dl-stub').attr('href').value),
       title: row.css('.tLink')[0].text,
       link: row.css('.tLink')[0]['href'],
       seeds: row.css('.seedmed')[0].text.to_i,
@@ -140,12 +156,18 @@ class Rutracker
       size: parse_size(row.css('a.dl-stub')[0].text),
       downloads: row.css('.number-format')[0].text.to_i
     )
-  rescue
-    nil
+  # rescue
+  #   nil
   end
 
   def parse_size(size)
     size.gsub! /[\u0080-\u00ff]/, ' '
     Size.parse(size)
+  end
+
+  def parse_topic_id(url)
+    match = url.match /\?t=(\d+)/
+    return if match.blank?
+    match[1].try(:to_i)
   end
 end
