@@ -156,8 +156,8 @@ class Rutracker
       size: parse_size(row.css('a.dl-stub')[0].text),
       downloads: row.css('.number-format')[0].text.to_i
     )
-  # rescue
-  #   nil
+  rescue
+    nil
   end
 
   def parse_size(size)
