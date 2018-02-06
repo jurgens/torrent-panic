@@ -85,4 +85,12 @@ describe Releases::Presenter do
     end
   end
 
+  context 'with magnet link' do
+    let(:release_title) { "Криминальное чтиво / Pulp Fiction (Квентин Тарантино / Quentin Tarantino) [1994, США, триллер, комедия, криминал, BDRip 1080p]" }
+    let(:release) { build :release, title: release_title, size: '1470', magnet: 'magnet:link' }
+
+    it 'should render a link around size' do
+      expect(described_class.new(release).size).to eq '<a href="magnet:link">1.44 GB</a>'
+    end
+  end
 end

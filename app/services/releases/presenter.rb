@@ -23,7 +23,11 @@ module Releases
     end
 
     def size
-      Size.print(object.size)
+      if object.magnet.present?
+        "<a href=\"#{object.magnet}\">#{Size.print(object.size)}</a>"
+      else
+        Size.print(object.size)
+      end
     end
 
     def description

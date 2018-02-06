@@ -20,7 +20,5 @@ RSpec.describe Rutracker::Agent, type: :model do
       expect_any_instance_of(Mechanize).to receive(:get)
       subject
     end
-
   end
-
 end
