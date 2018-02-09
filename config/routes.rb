@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #
 
   root 'home#index'
-  post '/webhooks/:action', controller: "webhooks"
+  post '/webhooks/telegram', controller: 'webhooks', action: 'telegram'
 
   namespace :admin do
     get '/' => 'dashboard#index'

@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+how to setup bot backend locally
 
-Things you may want to cover:
+1. start rails ```start rails``` 
+2. run ```ngrok http 3000```
+3. copy URL from ngrok output to BOT_URL
 
-* Ruby version
+   ```Forwarding https://11444cdb.ngrok.io -> localhost:3000```
 
-* System dependencies
+4. create new bot and get API key or use existing and set TELEGRAM_API_KEY
+5. run ```rake telegram:init``` to set a webhook
+6. start sending commands from bot
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
