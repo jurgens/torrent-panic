@@ -49,7 +49,7 @@ class TelegramChat
   end
 
   def message
-    @message ||= webhook[:message]
+    @message ||= webhook[:message].presence || webhook[:edited_message]
   end
 
   def from
