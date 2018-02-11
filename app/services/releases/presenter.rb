@@ -48,7 +48,7 @@ module Releases
     end
 
     def description
-      [name, link_or_size].reject(&:blank?).join(' - ')
+      [link_or_size, name].reject(&:blank?).join(' - ')
     end
 
     private

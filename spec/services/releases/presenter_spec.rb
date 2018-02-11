@@ -15,7 +15,7 @@ describe Releases::Presenter do
       allow(presenter).to receive(:rip_type).and_return('HDRip')
       allow(presenter).to receive(:size).and_return('1.4 GB')
 
-      expect(presenter.description).to eq 'MVO, HDRip - 1.4 GB'
+      expect(presenter.description).to eq '1.4 GB - MVO, HDRip'
     end
 
     specify 'with rip and size' do
@@ -23,7 +23,7 @@ describe Releases::Presenter do
       allow(presenter).to receive(:rip_type).and_return('HDRip')
       allow(presenter).to receive(:size).and_return('1.4 GB')
 
-      expect(presenter.description).to eq 'HDRip - 1.4 GB'
+      expect(presenter.description).to eq '1.4 GB - HDRip'
     end
 
     specify 'with size only' do
