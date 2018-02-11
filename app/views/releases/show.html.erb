@@ -39,7 +39,8 @@
   }
 
   ready(function() {
-    var clipboard = new Clipboard('.clipboard-btn');
+    new Clipboard('.clipboard-btn');
+    window.location.href = "<%=@release.magnet %>";
   });
 </script>
 
