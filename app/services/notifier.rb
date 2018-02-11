@@ -10,11 +10,15 @@ class Notifier
     releases = suitable_releases_for?(@user)
     return if releases.empty?
 
-    message = [@movie.title]
-    releases.each do |release|
-      presenter = Releases::Presenter.new(release)
-      message << "<b>#{presenter.title}</b>\n#{presenter.description}"
+    message = []
+    release_titles = []
+
+    releases.map{|e| Releases::Presenter.new(e) }.each do |release|
+      release_titles << release.title
+      message << release.description
     end
+
+    message.unshift "<b>#{release_titles.first}</b>"
     message = message.join("\n\n")
 
     @user.message.send_message message

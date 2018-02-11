@@ -1,0 +1,45 @@
+
+<header>
+  <h1>TorrentPanic!</h1>
+</header>
+
+<div class="movie">
+  <img class="movie__poster" src="<%=@movie.poster %>" width="150px">
+  <div class="movie__details">
+    <h2 class="movie__title"><%=@movie.title %></h2>
+    <div class="movie__year"><%=@movie.year%></div>
+  </div>
+</div>
+
+<div class="panel">
+  <h4>Magnet link</h4>
+
+  <div class="release-name"><%=@release.name%></div>
+
+  <div class="input-group">
+    <input type="text" value="<%=@release.magnet%>" class="magnet-link input">
+    <span class="input-group-button">
+      <button class="btn clipboard-btn" data-clipboard-text="<%=@release.magnet%>">
+        <img src="<%=image_url('clippy.svg')%>" width="13" alt="copy to clipboard">
+      </button>
+    </span>
+  </div>
+</div>
+
+<script>
+  function ready(callback) {
+    // in case the document is already rendered
+    if (document.readyState!='loading') callback();
+    // modern browsers
+    else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+    // IE <= 8
+    else document.attachEvent('onreadystatechange', function(){
+      if (document.readyState=='complete') callback();
+    });
+  }
+
+  ready(function() {
+    var clipboard = new Clipboard('.clipboard-btn');
+  });
+</script>
+

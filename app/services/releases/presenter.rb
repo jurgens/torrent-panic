@@ -1,7 +1,12 @@
 module Releases
   class Presenter
 
+    include Rails.application.routes.url_helpers
+    include ActionView::Helpers::UrlHelper
+
     attr_reader :object, :matcher
+
+    delegate :has_link?, :magnet, to: :object
 
     def initialize(object)
       @object = object
@@ -22,17 +27,28 @@ module Releases
       matcher[3].match(/(\S+[R|r]ip.*)$/).try(:[], 1)
     end
 
+    def link
+      release_url(object.id, host: ENV['BOT_URL'])
+    end
+
     def size
-      if object.magnet.present?
-        "<a href=\"#{object.magnet}\">#{Size.print(object.size)}</a>"
-      else
-        Size.print(object.size)
-      end
+      Size.print(object.size)
+    end
+
+    def link_with_size
+      link_to size, link
+    end
+
+    def link_or_size
+      has_link? ? link_with_size : size
+    end
+
+    def name
+      [translation, rip_type].reject(&:blank?).join(', ')
     end
 
     def description
-      name = [translation, rip_type].reject(&:blank?).join(', ')
-      [name, size].reject(&:blank?).join(' - ')
+      [name, link_or_size].reject(&:blank?).join(' - ')
     end
 
     private

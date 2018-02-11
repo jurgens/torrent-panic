@@ -2,11 +2,13 @@ require 'rails_helper'
 
 describe Releases::Presenter do
 
-  let(:release) { build :release, title: release_title, size: '1470' }
+  let(:release) { create :release, title: release_title, size: '1470' }
 
   context 'description' do
-    let(:presenter) { Releases::Presenter.new nil }
+    let(:presenter) { Releases::Presenter.new release }
     let(:release_title) { 'title' }
+
+    before { expect(release).to receive(:has_link?).and_return(false) }
 
     specify 'with translation, rip and size' do
       allow(presenter).to receive(:translation).and_return('MVO')
@@ -34,18 +36,20 @@ describe Releases::Presenter do
   end
 
   context 'with full details' do
+    subject { described_class.new(release) }
+
     let(:release_title) { "Криминальное чтиво / Бульварное чтиво / Pulp Fiction (Квентин Тарантино / Quentin Tarantino) [1994, США, боевик, драма, криминал, BDRip-AVC] DUB + AVO (Гоблин) + Original + Subs" }
 
     specify 'translation' do
-      expect(described_class.new(release).translation).to eq 'DUB + AVO (Гоблин) + Original + Subs'
+      expect(subject.translation).to eq 'DUB + AVO (Гоблин) + Original + Subs'
     end
 
     specify 'rip_type' do
-      expect(described_class.new(release).rip_type).to eq 'BDRip-AVC'
+      expect(subject.rip_type).to eq 'BDRip-AVC'
     end
 
     specify 'size' do
-      expect(described_class.new(release).size).to eq '1.44 GB'
+      expect(subject.size).to eq '1.44 GB'
     end
   end
 
@@ -85,12 +89,12 @@ describe Releases::Presenter do
     end
   end
 
-  context 'with magnet link' do
+  context 'with a link' do
     let(:release_title) { "Криминальное чтиво / Pulp Fiction (Квентин Тарантино / Quentin Tarantino) [1994, США, триллер, комедия, криминал, BDRip 1080p]" }
-    let(:release) { build :release, title: release_title, size: '1470', magnet: 'magnet:link' }
+    let(:release) { create :release, title: release_title, size: '1470' }
 
     it 'should render a link around size' do
-      expect(described_class.new(release).size).to eq '<a href="magnet:link">1.44 GB</a>'
+      expect(described_class.new(release).link_with_size).to eq "<a href=\"#{ENV['BOT_URL']}/releases/#{release.id}\">1.44 GB</a>"
     end
   end
 end

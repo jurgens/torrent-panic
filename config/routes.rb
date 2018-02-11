@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   post '/webhooks/telegram', controller: 'webhooks', action: 'telegram'
+  get '/releases/:id' => 'releases#show', as: 'release'
 
   namespace :admin do
     get '/' => 'dashboard#index'
