@@ -6,8 +6,9 @@ describe 'Admin Area' do
   specify 'dashboard' do
     visit '/admin/'
 
-    within 'h1' do
-      expect(page).to have_content 'Dashboard'
+    within 'dl' do
+      expect(page).to have_content 'Users'
+      expect(page).to have_content 'Movies'
     end
   end
 end
