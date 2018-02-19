@@ -55,7 +55,10 @@ class Rutracker
         1900, # Отечественные мультфильмы (DVD)
         521, # Иностранные мультфильмы (DVD)
         539, # Отечественные полнометражные мультфильмы
-        209, # Иностранные мультфильмы
+        209, # Иностранные мультфильмы,
+        599, # ANIME
+        1105,
+        1389
     ]
 
     attr_reader :username, :password
@@ -71,7 +74,6 @@ class Rutracker
     end
 
     def search(keyword)
-      # TODO: add search params (search only in "Movies" category)
       @agent.get "#{SEARCH_URL}?#{params(keyword)}"
       @agent.page.search('//body')
     end
@@ -96,6 +98,8 @@ class Rutracker
                   login_username: username,
                   login_password: password,
                   login: '%C2%F5%EE%E4' # Вход
+
+      # TODO check if login was successful
     end
   end
 
@@ -103,9 +107,14 @@ class Rutracker
     include ActiveModel::Model
 
     STATUSES = {
-      'проверено'.freeze => :approved,
-      'не проверено'.freeze => :not_approved
+      'проверено'.freeze    => :approved,
+      'не проверено'.freeze => :not_approved,
+      'временная'.freeze    => :temporary,
+      'недооформлено'.freeze => :malformed,
+      'сомнительно'.freeze  => :questionable,
     }.freeze
+
+    BAD_STATUSES = %w{temporary}
 
     DEFAULT_STATUS = :not_approved
 
@@ -117,6 +126,10 @@ class Rutracker
 
     def status=(status)
       @status = STATUSES.fetch(status, DEFAULT_STATUS)
+    end
+
+    def good?
+      !BAD_STATUSES.include?(@status)
     end
   end
 
@@ -143,7 +156,7 @@ class Rutracker
   def items(html)
     html.css('#tor-tbl .hl-tr').map do |row|
       parse_item(row)
-    end.reject(&:blank?).slice(0, TOP)
+    end.reject(&:blank?).select(&:good?).slice(0, TOP)
   end
 
   def parse_item(row)

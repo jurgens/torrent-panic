@@ -47,10 +47,10 @@ module Operations
       return @movie if @movie.present?
 
       attributes = {
-          tmdb_id: data.id,
-          title: data.original_title,
-          poster: poster(data.poster_path),
-          year: release_year(data.release_date)
+        tmdb_id: data.id,
+        title: data.title,
+        poster: poster(data.poster_path),
+        year: release_year(data.release_date)
       }
       Movie.create attributes
     end
