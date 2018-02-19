@@ -59,10 +59,9 @@ class TelegramChat
   def find_or_create_user
     begin
       User.transaction(requires_new: true) do
-        User.find_or_create_by telegram_id: from[:id] do |user|
-          user.first_name = from[:first_name]
-          user.last_name = from[:last_name]
-        end
+        user = User.find_or_create_by telegram_id: from[:id]
+        user.update_attributes first_name: from[:first_name], last_name: from[:last_name], language: from[:language_code]
+        user
       end
     rescue ActiveRecord::RecordNotUnique
       retry
