@@ -55,7 +55,7 @@ module Releases
 
     def match
       return if object.nil?
-      @matcher ||= object.title.match /^(.+)\s*\((.+)\)\s*\[(.+)\]\s*(.*)$/
+      @matcher ||= object.title.match /^(.+)\s*\((.+)\)\s*\[(.+?)\]\s*(.*)$/
     end
   end
 end

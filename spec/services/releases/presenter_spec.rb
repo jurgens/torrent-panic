@@ -89,6 +89,18 @@ describe Releases::Presenter do
     end
   end
 
+  context 'with extended info' do
+    let(:release_title) { "Властелин колец: Братство кольца / The Lord of the Rings: The Fellowship of the Ring (Питер Джексон / Peter Jackson) [2001, США, Новая Зеландия, фэнтези, боевик, приключения, BDRip-AVC] [Extended Edition] MVO (Позитив) + Original + Sub (Rus, Eng)" }
+
+    specify 'translation' do
+      expect(described_class.new(release).translation).to eq '[Extended Edition] MVO (Позитив) + Original + Sub (Rus, Eng)'
+    end
+
+    specify 'rip_type' do
+      expect(described_class.new(release).rip_type).to eq 'BDRip-AVC'
+    end
+  end
+
   context 'with a link' do
     let(:release_title) { "Криминальное чтиво / Pulp Fiction (Квентин Тарантино / Quentin Tarantino) [1994, США, триллер, комедия, криминал, BDRip 1080p]" }
     let(:release) { create :release, title: release_title, size: '1470' }
