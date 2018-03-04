@@ -13,6 +13,8 @@ module Movies
 
       return if releases.empty?
 
+      @movie.releases.delete_all
+
       releases.each do |release|
         @movie.releases << build_release(release)
       end
