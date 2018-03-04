@@ -13,7 +13,7 @@ module Operations
 
     def process
       if movie.blank?
-        @user.message.send_message "No movie found with title \'#{@title}\'"
+        @user.message.send_message I18n.t('errors.no_movie', title: @title)
       else
         if movie.poster.present?
           @user.message.send_photo movie.poster, movie.full_title
@@ -24,7 +24,7 @@ module Operations
         Operations::FindReleases.new(movie, @user).process
       end
     rescue StandardError => e
-      @user.message.send_message "Oops, I couldn't process your request"
+      @user.message.send_message I18n.t('errors.unexpected')
       Rollbar.error(e)
     end
 

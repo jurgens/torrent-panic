@@ -8,17 +8,21 @@ class TelegramChat
   end
 
   def dispatch
-    @user = find_or_create_user
+    find_or_create_user
     return if duplicate_message?
     store_update_id
-
+    set_locale
     command.process(message[:text])
   rescue StandardError => e
-    @user.message.send_message "Oops, I couldn't process your request"
+    @user.message.send_message I18n.t('errors.unexpected')
     Rollbar.error(e)
   end
 
   private
+
+  def set_locale
+    I18n.locale = :ru
+  end
 
   def command
     chat_command || user_input
@@ -59,9 +63,8 @@ class TelegramChat
   def find_or_create_user
     begin
       User.transaction(requires_new: true) do
-        user = User.find_or_create_by telegram_id: from[:id]
-        user.update_attributes first_name: from[:first_name], last_name: from[:last_name], language: from[:language_code]
-        user
+        @user = User.find_or_create_by telegram_id: from[:id]
+        @user.update_attributes first_name: from[:first_name], last_name: from[:last_name], language: from[:language_code]
       end
     rescue ActiveRecord::RecordNotUnique
       retry

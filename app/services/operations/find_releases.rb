@@ -14,7 +14,7 @@ module Operations
         Notifier.new(@user, @movie).process
       else
         @user.wishes << Wish.new(movie: movie)
-        @user.message.send_message "I will let you know when \"#{movie.title}\" is released"
+        @user.message.send_message I18n.t('errors.no_releases', title: movie.title)
       end
     end
   end

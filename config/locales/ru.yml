@@ -29,13 +29,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ru:
   errors:
-    unexpected: "Oops, I couldn't process your request"
-    no_movie: "No movie found with title \"%{title}\""
-    no_releases: "I will let you know when %{title} is released"
+    unexpected: "Что-то пошло не так :("
+    no_movie: "Нет такого фильма - \"%{title}\""
+    no_releases: "Я сообщу, когда \"%{title}\" можно будет скачать."
   commands:
     start:
-      greeting: "Congratulations! You have started using TorrentPanic!\nType a movie name that you want to watch"
+      greeting: "Привет, %{username}. Напиши название фильма, который ты хочешь посмотреть.\n\nЛучше использовать оригинальное название, но можно и его русский вариант."
     stop:
-      ciao: "Okay, see you soon. TorrentPanic!"
+      ciao: "Ладно, заходи еще."

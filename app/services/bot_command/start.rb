@@ -2,7 +2,7 @@ module BotCommand
   class Start < Base
     def process(input)
       if input == '/start'
-        message.send_message "Congratulations! You have started using TorrentPanic!\nType a movie name that you want to watch."
+        message.send_message I18n.t('commands.start.greeting', username: @user.first_name)
         @user.update_attribute :status, 'input'
       end
     end
