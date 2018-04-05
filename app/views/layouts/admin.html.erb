@@ -33,6 +33,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/admin/users">Users</a>
       </li>
+      <li class="nav-item">
+        <%= link_to 'Broadcast', new_admin_broadcast_url, class: 'nav-link' %>
+      </li>
       <!--<li class="nav-item">-->
         <!--<a class="nav-link disabled" href="#">Disabled</a>-->
       <!--</li>-->
@@ -48,18 +51,20 @@
   </div>
 </nav>
 
-<main role="main" class="container">
-  <%= yield %>
-</main><!-- /.container -->
-
 <div class="container">
   <% flash.each do |name, msg| %>
     <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
       <%= msg %>
     <% end %>
   <% end %>
 </div>
+
+<main role="main" class="container">
+  <%= yield %>
+</main><!-- /.container -->
+
 
 </body>
 </html>
