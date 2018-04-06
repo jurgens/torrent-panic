@@ -1,14 +1,9 @@
 module BotCommand
   class Language < Base
-    DEFAULT_LANGUAGE = 'en'
-    LANGUAGES = {
-        'en' => I18n.t('languages.en'),
-        'ru' => I18n.t('languages.ru')
-    }
 
     def process(input)
       if input.match /^\/language/
-        message.send_keyboard I18n.t('commands.language.choose'), LANGUAGES.values
+        message.send_keyboard I18n.t('commands.language.choose'), User::LANGUAGES.values
         @user.update_attribute :status, 'language'
       else
         locale = selected_locale(input)
@@ -19,7 +14,7 @@ module BotCommand
     end
 
     def selected_locale(input)
-      LANGUAGES.key(input) || DEFAULT_LANGUAGE
+      LANGUAGES.key(input) || User::DEFAULT_LANGUAGE
     end
   end
 end
