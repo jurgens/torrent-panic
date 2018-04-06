@@ -15,6 +15,7 @@ class TelegramChat
   rescue StandardError => e
     @user.message.send_message I18n.t('errors.unexpected')
     Rollbar.error(e)
+    raise e if Rails.env.development?
   end
 
   private
@@ -26,8 +27,9 @@ class TelegramChat
   def chat_command
     match = /\/(\w+)/.match message[:text]
     return if match.nil?
-    return unless %w{start stop}.include? match[1]
     "BotCommand::#{match[1].capitalize}".constantize.new(@user)
+  rescue
+    nil
   end
 
   def user_input

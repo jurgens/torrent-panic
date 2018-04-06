@@ -5,13 +5,10 @@ class User < ApplicationRecord
 
   validates :telegram_id, uniqueness: true
 
-  scope :ordered, -> { order("created_at DESC") }
+  scope :ordered, -> { order("updated_at DESC") }
 
   def message
     @message ||= Telegram::Message.new(telegram_id, locale)
   end
 
-  def locale
-    :ru
-  end
 end

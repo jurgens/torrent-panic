@@ -39,3 +39,9 @@ en:
       greeting: "Congratulations! You have started using TorrentPanic!\nType a movie name that you want to watch"
     stop:
       ciao: "Okay, see you soon. TorrentPanic!"
+    language:
+      choose: 'Choose your language'
+      switched: 'English selected'
+  languages:
+    en: 'English'
+    ru: 'Русский'

@@ -4,17 +4,19 @@
   <tr>
     <th width="20%">First</th>
     <th width="20%">Last</th>
-    <th width="20%">Language</th>
-    <th width="20%">Registered</th>
-    <th width="20%">Last Accessed</th>
+    <th width="15%">Language</th>
+    <th width="15%">Locale</th>
+    <th width="15%">Registered</th>
+    <th width="15%">Last Accessed</th>
   </tr>
   <% collection.each do |user| %>
     <tr>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
       <td><%= user.language %></td>
+      <td><%= user.locale %></td>
       <td><%= l user.created_at, format: :short %></td>
-      <td><%= l user.updated_at, format: :short %></td>
+      <td><%= time_ago_in_words user.updated_at %> ago</td>
     </tr>
   <% end %>
 </table>
