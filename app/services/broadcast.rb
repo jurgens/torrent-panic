@@ -11,10 +11,11 @@ class Broadcast
     end
 
     def personalized_message(user, message)
+      new_message = message.dup
       %w{first_name last_name language}.each do |attribute|
-        message.gsub! "%#{attribute}%", user.send(attribute.to_sym).to_s
+        new_message = new_message.gsub "%#{attribute}%", user.send(attribute.to_sym).to_s
       end
-      message
+      new_message
     end
   end
 end
