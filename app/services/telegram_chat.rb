@@ -11,7 +11,6 @@ class TelegramChat
     find_or_create_user
     return if duplicate_message?
     store_update_id
-    set_locale
     command.process(message[:text])
   rescue StandardError => e
     @user.message.send_message I18n.t('errors.unexpected')
@@ -19,10 +18,6 @@ class TelegramChat
   end
 
   private
-
-  def set_locale
-    I18n.locale = :ru
-  end
 
   def command
     chat_command || user_input

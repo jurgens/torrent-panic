@@ -8,6 +8,10 @@ class User < ApplicationRecord
   scope :ordered, -> { order("created_at DESC") }
 
   def message
-    @message ||= Telegram::Message.new(telegram_id)
+    @message ||= Telegram::Message.new(telegram_id, locale)
+  end
+
+  def locale
+    :ru
   end
 end

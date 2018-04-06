@@ -2,11 +2,14 @@ require 'telegram/bot'
 
 module Telegram
   class Message
-    attr_reader :telegram_id, :api
+    attr_reader :telegram_id, :locale, :api
 
-    def initialize(telegram_id)
+    def initialize(telegram_id, locale)
       @telegram_id = telegram_id
+      @locale = locale
       @api = ::Telegram::Bot::Api.new ENV['TELEGRAM_API_KEY']
+
+      I18n.locale = @locale
     end
 
     def send_message(text, options = {})
