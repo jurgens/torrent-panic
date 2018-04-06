@@ -58,7 +58,8 @@ class Rutracker
         209, # Иностранные мультфильмы,
         599, # ANIME
         1105,
-        1389
+        1389,
+        124 # артхаус и авторское кино
     ]
 
     attr_reader :username, :password
