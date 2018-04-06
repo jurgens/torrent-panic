@@ -14,7 +14,7 @@ module BotCommand
     end
 
     def selected_locale(input)
-      LANGUAGES.key(input) || User::DEFAULT_LANGUAGE
+      User::LANGUAGES.key(input) || User::DEFAULT_LANGUAGE
     end
   end
 end
