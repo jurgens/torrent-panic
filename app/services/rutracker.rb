@@ -59,7 +59,8 @@ class Rutracker
         599, # ANIME
         1105,
         1389,
-        124 # артхаус и авторское кино
+        124, # артхаус и авторское кино,
+        22,  # наше кино
     ]
 
     attr_reader :username, :password
