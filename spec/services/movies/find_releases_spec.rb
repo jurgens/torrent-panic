@@ -63,11 +63,11 @@ describe Movies::FindReleases do
     context 'with no results' do
       before { expect(tracker).to receive(:search).with('Blade Runner 2049 2017').and_return([]) }
 
-      specify 'with empty results should not create releases' do
+      it 'should not create releases' do
         expect { subject }.not_to change(Release, :count)
       end
 
-      specify 'with empty results should not change movie.crawled_at' do
+      it 'should not change movie.crawled_at' do
         expect { subject }.not_to change { movie.crawled_at }
       end
     end

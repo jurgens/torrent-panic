@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   include Recent
 
-  has_many :wishes
+  has_many :wishes, dependent: :destroy
+  has_many :wanted_movies, through: :wishes, source: :movie
 
   validates :telegram_id, uniqueness: true
 

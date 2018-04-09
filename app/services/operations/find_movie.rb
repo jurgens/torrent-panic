@@ -21,11 +21,12 @@ module Operations
           @user.message.send_message "#{movie.full_title}"
         end
 
-        Operations::FindReleases.new(movie, @user).process
+        Operations::FindReleases.new(movie: movie, user: @user).process
       end
     rescue StandardError => e
       @user.message.send_message I18n.t('errors.unexpected')
       Rollbar.error(e)
+      raise e if Rails.env.development?
     end
 
     def movie
