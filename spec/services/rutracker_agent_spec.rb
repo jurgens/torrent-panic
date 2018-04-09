@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Rutracker::Agent, type: :model do
 
-  describe '#search' do
+  describe '#search', :vcr do
 
     let(:keyword) { 'The Matrix' }
     let(:agent) { described_class.new('u', 'p') }

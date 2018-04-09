@@ -20,7 +20,7 @@ gem 'telegram-bot-ruby'
 gem 'dotenv-rails'
 gem 'sidekiq'
 gem 'sidekiq-cron', '~> 0.6.3'
-gem 'themoviedb'
+gem 'themoviedb', github: 'kodolabs/themoviedb'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'rollbar'
@@ -38,6 +38,8 @@ group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'capybara'
   gem 'shoulda-matchers'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do

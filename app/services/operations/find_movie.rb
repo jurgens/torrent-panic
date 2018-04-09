@@ -39,7 +39,7 @@ module Operations
     def tmdb_search
       results = Tmdb::Movie.find @title
       return if results.empty?
-      find_or_create_movie results.first
+      find_or_create_movie results.first # TODO: find best match
     end
 
     def find_or_create_movie(data)
@@ -48,7 +48,7 @@ module Operations
 
       attributes = {
         tmdb_id: data.id,
-        title: data.title,
+        title: title(data),
         poster: poster(data.poster_path),
         year: release_year(data.release_date)
       }
@@ -62,6 +62,12 @@ module Operations
     def poster(path)
       return if path.blank?
       [BASE_IMAGE_URL, path].join
+    end
+
+    def title(data)
+      _title = data.title
+      _title = data.original_title if data.original_language == 'ru'
+      _title
     end
   end
 end
