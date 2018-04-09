@@ -11,7 +11,7 @@
   <% @movies.each do |movie| %>
   <tr>
     <td><%=image_tag movie.poster, width: '100' unless movie.poster.blank? %></td>
-    <td><%=movie.title %> <i>(<%=movie.year%>)</i></td>
+    <td>[<%=movie.id %>] <%=movie.title %> <i>(<%=movie.year%>)</i></td>
     <td><%=movie.releases.size %></td>
     <td><%=movie.pending_wishes.size %></td>
   </tr>
