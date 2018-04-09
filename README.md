@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://semaphoreci.com/api/v1/kodo/torrent-panic/branches/master/badge.svg)](https://semaphoreci.com/kodo/torrent-panic)
+
 how to setup bot backend locally
 
 1. start rails ```start rails``` 
