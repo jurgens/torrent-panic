@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     get '/' => 'dashboard#index'
     resources :users, only: [:index]
     resources :broadcasts, only: [:new, :create]
+    resources :movies, only: [:index]
   end
 end

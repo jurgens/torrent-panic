@@ -31,7 +31,10 @@
         <a class="nav-link" href="/admin/">Dashboard <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/users">Users</a>
+        <%= link_to 'Users', admin_users_url, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Movies', admin_movies_url, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'Broadcast', new_admin_broadcast_url, class: 'nav-link' %>

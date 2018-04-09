@@ -6,6 +6,8 @@ class Movie < ApplicationRecord
 
   CRAWL_INTERVAL = 24.hours
 
+  scope :ordered, -> { order(crawled_at: :desc) }
+
   def full_title
     [title, year].compact.join(', ')
   end

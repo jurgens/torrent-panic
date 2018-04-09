@@ -1,0 +1,17 @@
+<h1>Movies</h1>
+
+<table class="table">
+  <tr>
+    <th width="10%"></th>
+    <th>Title</th>
+    <th width="10%">Releases</th>
+  </tr>
+
+  <% @movies.each do |movie| %>
+  <tr>
+    <td><%=image_tag movie.poster, width: '100' unless movie.poster.blank? %></td>
+    <td><%=movie.title %> <i>(<%=movie.year%>)</i></td>
+    <td><%=movie.releases.count %></td>
+  </tr>
+  <% end %>
+</table>
