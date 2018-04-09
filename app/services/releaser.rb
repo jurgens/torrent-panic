@@ -2,7 +2,7 @@ class Releaser
 
   class << self
     def pending_movies
-      Wish.pending.group(:movie).map{ |e| e.movie }
+      Movie.where(id: Wish.pending.pluck(:movie_id))
     end
 
     def check(movie)
