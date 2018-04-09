@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  #
+  require 'sidekiq'
+  require 'sidekiq/web'
+
+  Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
+    [user, password] == [ENV['ADMIN_LOGIN'], ENV['ADMIN_PASSWORD']]
+  end
+  mount Sidekiq::Web, at: "/sidekiq"
 
   root 'home#index'
   post '/webhooks/telegram', controller: 'webhooks', action: 'telegram'
@@ -12,4 +17,5 @@ Rails.application.routes.draw do
     resources :broadcasts, only: [:new, :create]
     resources :movies, only: [:index]
   end
+
 end
