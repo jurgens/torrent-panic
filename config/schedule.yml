@@ -1,0 +1,3 @@
+wish:
+  cron: '0 19 * * *'
+  class: 'WishWorker'

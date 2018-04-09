@@ -5,22 +5,35 @@ describe Releaser do
   let(:release) { create :release, movie: movie }
   let(:wish)    { create :wish, movie: movie }
 
-  before do
-    expect(Movies::FindReleases).to receive_message_chain(:new, :call)
-  end
+  context 'check' do
 
-  context 'call' do
     context 'when there are releases' do
+      before do
+        expect(Movies::FindReleases).to receive_message_chain(:new, :call)
+      end
+
       before { wish; release }
 
       specify 'should trigger notifications' do
         expect(Notifier).to receive_message_chain(:new, :process)
-        Releaser.new(movie).process
+        Releaser.check(movie)
       end
 
       specify 'should fulfill a wish' do
-        expect { Releaser.new(movie).process }.to change{ wish.reload.notified_at }.from(nil)
+        expect { Releaser.check(movie) }.to change{ wish.reload.notified_at }.from(nil)
       end
+    end
+  end
+
+  context 'pending' do
+    before { wish; release }
+
+    specify 'pending' do
+      another_movie = create :movie
+      create :wish, movie: another_movie, notified_at: 1.day.ago
+
+      expect(Releaser.pending_movies).to include(movie)
+      expect(Releaser.pending_movies).to_not include(another_movie)
     end
   end
 end

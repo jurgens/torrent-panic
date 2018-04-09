@@ -3,6 +3,6 @@ class ReleaserWorker
 
   def perform(movie_id)
     movie = Movie.find movie_id
-    Releaser.new(movie).process
+    Releaser.check(movie)
   end
 end
