@@ -1,7 +1,7 @@
 class WishWorker
   include Sidekiq::Worker
 
-  def process
+  def perform
     Releaser.pending_movies.each do |movie|
       ReleaserWorker.perform_async(movie.id)
     end
