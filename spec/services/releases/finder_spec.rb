@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Movies::FindReleases do
+describe Releases::Finder do
   let(:movie) { create :movie, title: 'Blade Runner 2049', year: 2017 }
   let(:tracker) { double :tracker }
   let(:releases) do

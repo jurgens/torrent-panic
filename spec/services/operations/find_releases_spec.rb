@@ -8,7 +8,7 @@ describe Operations::FindReleases do
 
   context 'when no releases found' do
     before do
-      allow(Movies::FindReleases).to receive_message_chain(:new, :call)
+      allow(Releases::Finder).to receive_message_chain(:new, :call)
     end
 
     specify 'it should add a movie to user wish list' do

@@ -9,7 +9,7 @@ describe Releaser do
 
     context 'when there are releases' do
       before do
-        expect(Movies::FindReleases).to receive_message_chain(:new, :call)
+        expect(Releases::Finder).to receive_message_chain(:new, :call)
       end
 
       before { wish; release }

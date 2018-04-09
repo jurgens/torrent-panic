@@ -1,5 +1,5 @@
-module Movies
-  class FindReleases
+module Releases
+  class Finder
     attr_reader :movie
 
     def initialize(movie)

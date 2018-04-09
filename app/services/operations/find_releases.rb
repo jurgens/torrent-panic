@@ -8,7 +8,7 @@ module Operations
     end
 
     def process
-      Movies::FindReleases.new(@movie).call
+      Releases::Finder.new(@movie).call
 
       if @movie.releases.any?
         Notifier.new(@user, @movie).process

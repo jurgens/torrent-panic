@@ -6,7 +6,7 @@ class Releaser
     end
 
     def check(movie)
-      Movies::FindReleases.new(movie).call
+      Releases::Finder.new(movie).call
 
       return if movie.releases.empty?
 
