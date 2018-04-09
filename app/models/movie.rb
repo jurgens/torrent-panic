@@ -3,6 +3,7 @@ class Movie < ApplicationRecord
 
   has_many :releases, dependent: :delete_all
   has_many :wishes, dependent: :delete_all
+  has_many :pending_wishes, -> { Wish.pending }, class_name: 'Wish'
 
   CRAWL_INTERVAL = 24.hours
 
