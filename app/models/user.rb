@@ -21,6 +21,10 @@ class User < ApplicationRecord
     @message ||= Telegram::Message.new(telegram_id, locale)
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   def set_locale
     self.locale = detect_locale || DEFAULT_LOCALE
   end
