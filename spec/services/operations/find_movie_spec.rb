@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe Operations::FindMovie do
-  let(:user) { create :user }
+  let(:search) { create :search }
 
   context 'when movie does not exist', :vcr do
     specify 'it should create a movie' do
-      expect { described_class.new('pulp fiction', user).process }.to change(Movie, :count).to(1)
+      expect { described_class.new(search).process }.to change(Movie, :count).to(1)
 
       movie = Movie.last
       expect(movie.tmdb_id).to eq 680
@@ -15,11 +15,11 @@ describe Operations::FindMovie do
     end
   end
 
-  context 'when movie already exist' do
+  context 'when movie already exist', :vcr do
     before { create :movie, tmdb_id: 680, title: 'Pulp Fiction' }
 
     specify 'it should not create a new movie' do
-      expect { described_class.new('Криминальное чтиво', user).process }.not_to change(Movie, :count)
+      expect { described_class.new(search).process }.not_to change(Movie, :count)
     end
   end
 end

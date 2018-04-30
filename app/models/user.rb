@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :wishes, dependent: :destroy
   has_many :wanted_movies, through: :wishes, source: :movie
+  has_many :searches, dependent: :destroy
 
   validates :telegram_id, uniqueness: true
 
@@ -18,6 +19,10 @@ class User < ApplicationRecord
 
   def message
     @message ||= Telegram::Message.new(telegram_id, locale)
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
   def set_locale
