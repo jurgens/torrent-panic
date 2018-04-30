@@ -4,9 +4,10 @@ module Operations
 
     attr_reader :title
 
-    def initialize(title, user)
-      @title = title
-      @user = user
+    def initialize(search)
+      @search = search
+      @title = search.text
+      @user = search.user
 
       Tmdb::Api.key ENV['TMDB_API_KEY']
     end
@@ -14,6 +15,7 @@ module Operations
     def process
       if movie.blank?
         @user.message.send_message I18n.t('errors.no_movie', title: @title)
+        @search.no_movie!
       else
         if movie.poster.present?
           @user.message.send_photo movie.poster, movie.full_title
@@ -21,12 +23,13 @@ module Operations
           @user.message.send_message "#{movie.full_title}"
         end
 
-        Operations::FindReleases.new(movie: movie, user: @user).process
+        Operations::FindReleases.new(movie: movie, search: @search).process
       end
     rescue StandardError => e
       @user.message.send_message I18n.t('errors.unexpected')
+      @search.error!
       Rollbar.error(e)
-      raise e if Rails.env.development?
+      raise e if Rails.env.development? || Rails.env.test?
     end
 
     def movie

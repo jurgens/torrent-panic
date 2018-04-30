@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :wishes, dependent: :destroy
   has_many :wanted_movies, through: :wishes, source: :movie
+  has_many :searches, dependent: :destroy
 
   validates :telegram_id, uniqueness: true
 

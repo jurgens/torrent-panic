@@ -1,6 +1,6 @@
 module BotCommand
   class None < Base
-    def process(input)
+    def process(search)
 
     end
   end

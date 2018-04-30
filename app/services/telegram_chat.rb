@@ -11,11 +11,12 @@ class TelegramChat
     find_or_create_user
     return if duplicate_message?
     store_update_id
-    command.process(message[:text])
+    @search = create_search_log(message[:text])
+    command.process(@search)
   rescue StandardError => e
     @user.message.send_message I18n.t('errors.unexpected')
     Rollbar.error(e)
-    raise e if Rails.env.development?
+    raise e if Rails.env.development? || Rails.env.test?
   end
 
   private
@@ -27,14 +28,14 @@ class TelegramChat
   def chat_command
     match = /\/(\w+)/.match message[:text]
     return if match.nil?
-    "BotCommand::#{match[1].capitalize}".constantize.new(@user)
+    "BotCommand::#{match[1].capitalize}".constantize.new
   rescue
     nil
   end
 
   def user_input
     status = @user.status.presence || 'none'
-    "BotCommand::#{status.capitalize}".constantize.new(@user)
+    "BotCommand::#{status.capitalize}".constantize.new
   end
 
   def duplicate_message?
@@ -66,5 +67,9 @@ class TelegramChat
     rescue ActiveRecord::RecordNotUnique
       retry
     end
+  end
+
+  def create_search_log(text)
+    @search = @user.searches.create text: text
   end
 end

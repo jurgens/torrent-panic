@@ -2,14 +2,11 @@ require 'telegram/bot'
 
 module BotCommand
   class Base
-    attr_reader :user
+    attr_reader :user, :input
 
-    def initialize(user)
-      @user = user
-    end
-
-    def process(input)
-      raise 'Implement this method in child class'
+    def process(search)
+      @user = search.user
+      @input = search.text
     end
 
     protected
