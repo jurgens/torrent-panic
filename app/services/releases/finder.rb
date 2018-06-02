@@ -9,7 +9,11 @@ module Releases
     def call
       return if @movie.recently_crawled?
 
-      releases = tracker.search "#{@movie.title} #{@movie.year}"
+      releases = tracker.search("#{@movie.title} #{@movie.year}")
+
+      if releases.empty? && (@movie.year < Date.current.year)
+        releases = tracker.search("#{@movie.title} #{@movie.year-1}")
+      end
 
       return if releases.empty?
 

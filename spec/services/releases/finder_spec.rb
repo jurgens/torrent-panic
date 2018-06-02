@@ -27,8 +27,7 @@ describe Releases::Finder do
   end
 
   before do
-    expect_any_instance_of(described_class).to receive(:tracker).and_return(tracker)
-    # allow(tracker).to receive(:topic_data).and_return({}).exactly(3).times #.and_return({magnet: 'magnet:something'}).at_least(:once)
+    expect_any_instance_of(described_class).to receive(:tracker).twice.and_return(tracker)
   end
 
   context 'process' do
@@ -37,6 +36,7 @@ describe Releases::Finder do
     context 'with results' do
       before do
         allow(tracker).to receive(:search).with('Blade Runner 2049 2017').and_return(releases)
+        allow(tracker).to receive(:search).with('Blade Runner 2049 2016').and_return(releases)
       end
 
       specify 'should store releases', :skip do
@@ -61,7 +61,10 @@ describe Releases::Finder do
     end
 
     context 'with no results' do
-      before { expect(tracker).to receive(:search).with('Blade Runner 2049 2017').and_return([]) }
+      before do
+        expect(tracker).to receive(:search).with('Blade Runner 2049 2016').and_return([])
+        expect(tracker).to receive(:search).with('Blade Runner 2049 2017').and_return([])
+      end
 
       it 'should not create releases' do
         expect { subject }.not_to change(Release, :count)
