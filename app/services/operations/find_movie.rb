@@ -1,6 +1,6 @@
 module Operations
   class FindMovie
-    BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w300'
+
 
     attr_reader :title
 
@@ -8,8 +8,6 @@ module Operations
       @search = search
       @title = search.text
       @user = search.user
-
-      Tmdb::Api.key ENV['TMDB_API_KEY']
     end
 
     def process
@@ -33,45 +31,15 @@ module Operations
     end
 
     def movie
-      @movie ||= local_search || tmdb_search
+      @movie ||= local_search || external_search
     end
 
     def local_search
       Movie.limit(1).where("title LIKE ?", @title).first
     end
 
-    def tmdb_search
-      results = Tmdb::Movie.find @title
-      return if results.empty?
-      find_or_create_movie results.first # TODO: find best match
-    end
-
-    def find_or_create_movie(data)
-      @movie = Movie.find_by tmdb_id: data.id
-      return @movie if @movie.present?
-
-      attributes = {
-        tmdb_id: data.id,
-        title: title(data),
-        poster: poster(data.poster_path),
-        year: release_year(data.release_date)
-      }
-      Movie.create attributes
-    end
-
-    def release_year(date)
-      date.match(/(\d+)-\d+\d+/)[1].to_i rescue nil
-    end
-
-    def poster(path)
-      return if path.blank?
-      [BASE_IMAGE_URL, path].join
-    end
-
-    def title(data)
-      _title = data.title
-      _title = data.original_title if data.original_language == 'ru'
-      _title
+    def external_search
+      Movies::TmdbSearch.new.find_best(@title)
     end
   end
 end
