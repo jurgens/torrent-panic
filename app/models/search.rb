@@ -10,6 +10,6 @@ class Search < ApplicationRecord
   scope :ordered, -> { order(created_at: :desc) }
 
   def movie_title
-    movie.present? ? movie.title : '-'
+    movie.present? ? "#{movie.title}, #{movie.year}" : '-'
   end
 end
