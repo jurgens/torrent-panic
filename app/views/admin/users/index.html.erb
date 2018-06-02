@@ -2,6 +2,7 @@
 
 <table class="table">
   <tr>
+    <th width="5%">Status</th>
     <th width="20%">First</th>
     <th width="20%">Last</th>
     <th width="10%">Language</th>
@@ -11,6 +12,7 @@
   </tr>
   <% collection.each do |user| %>
     <tr>
+      <td><%= user.error == 0 ? 'OK' : '--' %></td>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
       <td><%= user.language %></td>

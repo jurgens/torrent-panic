@@ -1,11 +1,15 @@
 class Broadcast
   class << self
     def message(message)
-      User.all.each do |user|
+      User.active.each do |user|
         begin
           user.message.send_message personalized_message(user, message)
         rescue StandardError => e
           Rollbar.error(e, user_id: user.id)
+        rescue Telegram::Bot::Exceptions::ResponseError => e
+          if e.to_s.match /Forbidden/
+            @user.forbidden!
+          end
         end
       end
     end

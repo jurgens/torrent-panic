@@ -7,6 +7,8 @@ class Notifier
   end
 
   def process
+    return if @user.forbidden?
+
     releases = suitable_releases_for?(@user)
     return if releases.empty?
 
@@ -22,6 +24,10 @@ class Notifier
     message = message.join("\n\n")
 
     @user.message.send_message message
+  rescue Telegram::Bot::Exceptions::ResponseError => e
+    if e.to_s.match /Forbidden/
+      @user.forbidden!
+    end
   end
 
   private
