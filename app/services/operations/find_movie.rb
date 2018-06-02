@@ -1,7 +1,5 @@
 module Operations
   class FindMovie
-
-
     attr_reader :title
 
     def initialize(search)
@@ -15,6 +13,9 @@ module Operations
         @user.message.send_message I18n.t('errors.no_movie', title: @title)
         @search.no_movie!
       else
+        @search.movie = @movie
+        @search.save
+
         if movie.poster.present?
           @user.message.send_photo movie.poster, movie.full_title
         else

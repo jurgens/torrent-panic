@@ -3,14 +3,16 @@
 <table class="table">
   <tr>
     <th width="10%">Status</th>
-    <th width="50%">Input</th>
-    <th width="25%">User</th>
-    <th width="25%">Date</th>
+    <th width="25%">Input</th>
+    <th width="25%">Movie</th>
+    <th width="20%">User</th>
+    <th width="20%">Date</th>
   </tr>
   <% collection.each do |resource| %>
     <tr>
       <td><%= resource.status %></td>
       <td><%= resource.text %></td>
+      <td><%= resource.movie_title %></td>
       <td><%= resource.full_name %></td>
       <td><%= time_ago_in_words resource.created_at %> ago</td>
     </tr>

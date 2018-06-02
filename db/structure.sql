@@ -14,8 +14,9 @@ CREATE INDEX "index_wishes_on_user_id" ON "wishes" ("user_id");
 CREATE INDEX "index_wishes_on_movie_id" ON "wishes" ("movie_id");
 CREATE TABLE IF NOT EXISTS "releases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "movie_id" integer DEFAULT NULL, "title" varchar DEFAULT NULL, "status" varchar DEFAULT NULL, "link" varchar DEFAULT NULL, "magnet" varchar DEFAULT NULL, "seeds" integer, "size" integer, "downloads" integer);
 CREATE INDEX "index_releases_on_movie_id" ON "releases" ("movie_id");
-CREATE TABLE IF NOT EXISTS "searches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE IF NOT EXISTS "searches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "movie_id" integer);
 CREATE INDEX "index_searches_on_user_id" ON "searches" ("user_id");
+CREATE INDEX "index_searches_on_movie_id" ON "searches" ("movie_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20180127140911'),
 ('20180127141236'),
@@ -30,6 +31,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180203131847'),
 ('20180219200557'),
 ('20180406065550'),
-('20180430153658');
+('20180430153658'),
+('20180602120844');
 
 
