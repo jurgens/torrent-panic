@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :telegram_id, uniqueness: true
 
   scope :ordered, -> { order("updated_at DESC") }
-  scope :valid, -> { where(error: 0) }
+  scope :active, -> { where(error: 0) }
 
   enum error: { ok: 0, forbidden: 1 }
 
