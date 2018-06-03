@@ -12,7 +12,7 @@
   </tr>
   <% collection.each do |user| %>
     <tr>
-      <td><%= user.error == 0 ? 'OK' : '--' %></td>
+      <td><%= user.error %></td>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
       <td><%= user.language %></td>
