@@ -1,0 +1,272 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=Robocop%201997
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 09:53:44 GMT
+      Etag:
+      - 72b32a1f754ba1c09b3695e0cb6cde7f
+      Server:
+      - openresty
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1528019634'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"total_results":0,"total_pages":1,"results":[]}'
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 09:53:44 GMT
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=Robocop%202015
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 09:54:25 GMT
+      Etag:
+      - 72b32a1f754ba1c09b3695e0cb6cde7f
+      Server:
+      - openresty
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1528019675'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"total_results":0,"total_pages":1,"results":[]}'
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 09:54:25 GMT
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=Robocop%202015&year=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 11:38:27 GMT
+      Etag:
+      - 72b32a1f754ba1c09b3695e0cb6cde7f
+      Server:
+      - openresty
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1528025917'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"total_results":0,"total_pages":1,"results":[]}'
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 11:38:27 GMT
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=&year=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 11:58:49 GMT
+      Server:
+      - openresty
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1528027137'
+      Content-Length:
+      - '37'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errors":["query must be provided"]}'
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 11:58:49 GMT
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=Robocop%202014&year=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 12:08:13 GMT
+      Etag:
+      - 72b32a1f754ba1c09b3695e0cb6cde7f
+      Server:
+      - openresty
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1528027702'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"total_results":0,"total_pages":1,"results":[]}'
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 12:08:13 GMT
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=Robocop&year=2014
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 12:15:26 GMT
+      Etag:
+      - e0a209539d1e74ab9fe46b9e01a19a97
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1528028136'
+      Content-Length:
+      - '2085'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJ0b3RhbF9yZXN1bHRzIjoyLCJ0b3RhbF9wYWdlcyI6MSwicmVzdWx0cyI6W3sidm90ZV9jb3VudCI6MjgxMiwiaWQiOjk3MDIwLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6NS43LCJ0aXRsZSI6IlJvYm9Db3AiLCJwb3B1bGFyaXR5IjoxMy4wNzA1NTgsInBvc3Rlcl9wYXRoIjoiXC9oRlFjQzVlU1NIcUpmazcwUmRnck1NeEd1WXQuanBnIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiUm9ib0NvcCIsImdlbnJlX2lkcyI6WzI4LDg3OF0sImJhY2tkcm9wX3BhdGgiOiJcL3prQlN1NWpOSTlZckFHdnZ5OGNBQWM3QlpYNS5qcGciLCJhZHVsdCI6ZmFsc2UsIm92ZXJ2aWV3IjoiSW4gUm9ib0NvcCwgdGhlIHllYXIgaXMgMjAyOCBhbmQgbXVsdGluYXRpb25hbCBjb25nbG9tZXJhdGUgT21uaUNvcnAgaXMgYXQgdGhlIGNlbnRlciBvZiByb2JvdCB0ZWNobm9sb2d5LiAgT3ZlcnNlYXMsIHRoZWlyIGRyb25lcyBoYXZlIGJlZW4gdXNlZCBieSB0aGUgbWlsaXRhcnkgZm9yIHllYXJzLCBidXQgaGF2ZSBiZWVuIGZvcmJpZGRlbiBmb3IgbGF3IGVuZm9yY2VtZW50IGluIEFtZXJpY2EuICBOb3cgT21uaUNvcnAgd2FudHMgdG8gYnJpbmcgdGhlaXIgY29udHJvdmVyc2lhbCB0ZWNobm9sb2d5IHRvIHRoZSBob21lIGZyb250LCBhbmQgdGhleSBzZWUgYSBnb2xkZW4gb3Bwb3J0dW5pdHkgdG8gZG8gaXQuICBXaGVuIEFsZXggTXVycGh5IOKAkyBhIGxvdmluZyBodXNiYW5kLCBmYXRoZXIgYW5kIGdvb2QgY29wIGRvaW5nIGhpcyBiZXN0IHRvIHN0ZW0gdGhlIHRpZGUgb2YgY3JpbWUgYW5kIGNvcnJ1cHRpb24gaW4gRGV0cm9pdCDigJMgaXMgY3JpdGljYWxseSBpbmp1cmVkLCBPbW5pQ29ycCBzZWVzIHRoZWlyIGNoYW5jZSB0byBidWlsZCBhIHBhcnQtbWFuLCBwYXJ0LXJvYm90IHBvbGljZSBvZmZpY2VyLiAgT21uaUNvcnAgZW52aXNpb25zIGEgUm9ib0NvcCBpbiBldmVyeSBjaXR5IGFuZCBldmVuIG1vcmUgYmlsbGlvbnMgZm9yIHRoZWlyIHNoYXJlaG9sZGVycywgYnV0IHRoZXkgbmV2ZXIgY291bnRlZCBvbiBvbmUgdGhpbmc6IHRoZXJlIGlzIHN0aWxsIGEgbWFuIGluc2lkZSB0aGUgbWFjaGluZS4iLCJyZWxlYXNlX2RhdGUiOiIyMDE0LTAxLTMwIn0seyJ2b3RlX2NvdW50Ijo5LCJpZCI6MjU0MjUxLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni43LCJ0aXRsZSI6Ik91ciBSb2JvQ29wIFJlbWFrZSIsInBvcHVsYXJpdHkiOjEuOTM3MDQyLCJwb3N0ZXJfcGF0aCI6IlwvYXF5U0Z5NHU1R1I0Nmt2Uk1haHhDWGJkeHhKLmpwZyIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6Ik91ciBSb2JvQ29wIFJlbWFrZSIsImdlbnJlX2lkcyI6WzM1LDI4LDgwLDg3OF0sImJhY2tkcm9wX3BhdGgiOiJcL2dWNHM3WGJQbnlnTlR6bGR0MHVDTXdkbmNsUC5qcGciLCJhZHVsdCI6ZmFsc2UsIm92ZXJ2aWV3IjoiT3VyIFJvYm9Db3AgUmVtYWtlIGlzIGEgY3Jvd2Qtc291cmNlZCBmaWxtIHByb2plY3QgYmFzZWQgb24gdGhlIDE5ODcgUGF1bCBWZXJob2V2ZW4gY2xhc3NpYy4gT3JnYW5pemVkIHRocm91Z2ggQ2hhbm5lbCAxMDEgYW5kIGEgYnVuY2ggb2Ygb3RoZXIgcGxhY2VzLCB3ZSdyZSA1MCBmaWxtbWFrZXJzIChhbWF0ZXVyIGFuZCBwcm9mZXNzaW9uYWwpICBmcm9tIExvcyBBbmdlbGVzIGFuZCBOZXcgWW9yayB3aG8gaGF2ZSBzcGxpdCB0aGUgb3JpZ2luYWwgUm9ib0NvcCB1cCBpbnRvIGluZGl2aWR1YWwgcGllY2VzIGFuZCBoYXZlIHJlbWFkZSB0aGUgbW92aWUgb3Vyc2VsdmVzLiAgTm90IG5lY2Vzc2FyaWx5IGEgc2hvdC1mb3Itc2hvdCByZW1ha2UsIGJ1dCBhIHNjZW5lLWZvci1zY2VuZSByZXRlbGxpbmcuIEFzIGJpZyBmYW5zIG9mIHRoZSBvcmlnaW5hbCBSb2JvQ29wLCBhbmQgYXMgZmlsbW1ha2VycyBhbmQgZmlsbSBmYW5zIGFkbWl0dGVkbHkgcm9sbGluZyBvdXIgZXllcyBhdCB0aGUgSG9sbHl3b29kIHJlbWFrZSBtYWNoaW5lLCB3ZSd2ZSBlbGVjdGVkIHRvIGRvIHRoaXMgcmVtYWtlIHRoaW5nIG91ciBvd24gd2F5LiIsInJlbGVhc2VfZGF0ZSI6IjIwMTQtMDEtMjYifV19
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 12:15:26 GMT
+recorded_with: VCR 4.0.0

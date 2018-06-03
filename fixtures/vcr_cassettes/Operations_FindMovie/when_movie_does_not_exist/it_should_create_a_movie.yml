@@ -1199,4 +1199,126 @@ http_interactions:
         women, space creatures and blazing weapons.","release_date":"2010-01-01"}]}'
     http_version: 
   recorded_at: Mon, 30 Apr 2018 16:07:30 GMT
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=Pulp%20Fiction&year=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 11:38:35 GMT
+      Etag:
+      - d15426b9c324676610fbb01360473ed8
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1528025917'
+      Content-Length:
+      - '3240'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"total_results":4,"total_pages":1,"results":[{"vote_count":11407,"id":680,"video":false,"vote_average":8.3,"title":"Pulp
+        Fiction","popularity":24.169073,"poster_path":"\/dM2w364MScsjFf8pfMbaWUcWrR.jpg","original_language":"en","original_title":"Pulp
+        Fiction","genre_ids":[53,80],"backdrop_path":"\/4cDFJr4HnXN5AdPw4AKrmLlMWdO.jpg","adult":false,"overview":"A
+        burger-loving hit man, his philosophical partner, a drug-addled gangster''s
+        moll and a washed-up boxer converge in this sprawling, comedic crime caper.
+        Their adventures unfurl in three stories that ingeniously trip back and forth
+        in time.","release_date":"1994-09-10"},{"vote_count":0,"id":109005,"video":false,"vote_average":0,"title":"Pulp
+        Fiction Art","popularity":1.004182,"poster_path":"\/yqbnCy6YCc9VY8cnkHGEgiylXey.jpg","original_language":"en","original_title":"Pulp
+        Fiction Art","genre_ids":[99],"backdrop_path":null,"adult":false,"overview":"A
+        guilty pleasure of the mid-20th century, pulp fiction magazines were often
+        defined less by their contents than by their provocative covers. This documentary
+        explores the shocking art that brought life to these lurid publications. Filmmaker
+        Jamie McDonald delves into the collection of art historian Robert Lesser,
+        shedding light on this nearly forgotten art form and the ways it impacted
+        popular culture.","release_date":"2005-01-01"},{"vote_count":0,"id":295641,"video":false,"vote_average":0,"title":"Pulp
+        Fiction: the Golden Age of Storytelling","popularity":1.004707,"poster_path":null,"original_language":"en","original_title":"Pulp
+        Fiction: the Golden Age of Storytelling","genre_ids":[],"backdrop_path":null,"adult":false,"overview":"This
+        program profiles writers of the 20s, 30s, and 40s, known as the Pulp Fiction-era.
+        These writers created the iconic characters who live on today in our collective
+        hearts and imaginations. It has even been estimated that 90-95% of the top
+        blockbusters in Hollywood movies, were based on the stories from the Pulp
+        Fiction-era.","release_date":"2009-01-01"},{"vote_count":0,"id":323819,"video":false,"vote_average":0,"title":"UFOTV
+        Presents: Pulp Fiction: The Golden Age of Storytelling","popularity":1.005133,"poster_path":"\/iU0Rnw8R0fehqE4lN8GXboCJYOM.jpg","original_language":"en","original_title":"UFOTV
+        Presents: Pulp Fiction: The Golden Age of Storytelling","genre_ids":[],"backdrop_path":null,"adult":false,"overview":"Discover
+        the true history of the era of pulp fiction and the golden age of science
+        fiction, fantasy and adventure. Pulp fiction, named for the low quality paper
+        on which the stories were printed, blossomed in the early twentieth century.
+        After WWI and the Great Depression, audiences sought tales with strong heroes,
+        exciting adventures and alien encounters. This entertaining documentary traces
+        the golden years of pulps, beginning in the 1920''s, by highlighting numerous
+        writers including Erle Stanley Gardner and Edgar Rice Burroughs. Popular and
+        prolific authors Ray Bradbury and Frederik Pohl recall the days of nominal
+        pay, short deadlines, and the insatiable demand for copy. Special coverage
+        is given to the original cover art that defined pulp, featuring beautiful
+        women, space creatures and blazing weapons.","release_date":"2010-01-01"}]}'
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 11:38:36 GMT
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=5e2724614525349192271fd88066c829&query=&year=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 03 Jun 2018 12:00:17 GMT
+      Server:
+      - openresty
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1528027227'
+      Content-Length:
+      - '37'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errors":["query must be provided"]}'
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 12:00:17 GMT
 recorded_with: VCR 4.0.0
