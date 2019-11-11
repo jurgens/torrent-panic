@@ -22,7 +22,7 @@ gem 'sidekiq', '~> 5.0'
 gem 'sidekiq-cron'
 gem 'sidekiq-failures'
 gem 'themoviedb', github: 'kodolabs/themoviedb'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'rollbar'
 
