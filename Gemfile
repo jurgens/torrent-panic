@@ -32,7 +32,7 @@ gem 'mechanize'
 
 # external api
 gem 'telegram-bot-ruby', '~> 0.12.0'
-gem 'themoviedb', github: 'kodolabs/themoviedb'
+gem 'themoviedb', github: 'ahmetabdi/themoviedb'
 
 # config
 gem 'dotenv-rails', '~> 2.7.5'
