@@ -22,7 +22,7 @@ gem 'mini_racer'
 gem 'sass-rails', '~> 6.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 5.0.0'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.4.1'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3.3'
 
@@ -54,7 +54,7 @@ end
 group :test do
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'capybara'
-  gem 'shoulda-matchers', '~> 3.1.2'
+  gem 'shoulda-matchers', '~> 4.3.0'
   gem 'webmock'
   gem 'vcr'
 end
