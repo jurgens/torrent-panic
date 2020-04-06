@@ -7,7 +7,8 @@ end
 
 ruby '2.6.3'
 
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.0'
+gem 'bootsnap'
 gem 'sqlite3', '~> 1.3.13'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
