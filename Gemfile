@@ -19,7 +19,7 @@ gem 'mini_racer'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'telegram-bot-ruby', '~> 0.8.6.1'
-gem 'dotenv-rails', '~> 2.4.0'
+gem 'dotenv-rails', '~> 2.7.5'
 gem 'sidekiq', '~> 5.2.7'
 gem 'sidekiq-cron', '~> 1.1.0'
 gem 'sidekiq-failures'
@@ -38,7 +38,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot_rails', '~> 4.10.0'
+  gem 'factory_bot_rails', '~> 5.1.1'
   gem 'capybara'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'webmock'
