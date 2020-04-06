@@ -7,30 +7,43 @@ end
 
 ruby '2.6.3'
 
+# core
 gem 'rails', '~> 5.2.0'
 gem 'bootsnap'
-gem 'sqlite3', '~> 1.3.13'
-gem 'puma', '~> 3.7'
+
+# storage
+gem 'pg', '~> 1.2.3'
+
+# web server
+gem 'puma', '~> 4.3.3'
+
+# frontend
+gem 'mini_racer'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'nokogiri'
-gem 'pg', '~> 0.21.0'
-gem 'mechanize'
-gem 'mini_racer'
 gem 'coffee-rails', '~> 4.2'
-gem 'jbuilder', '~> 2.5'
-gem 'telegram-bot-ruby', '~> 0.8.6.1'
-gem 'dotenv-rails', '~> 2.7.5'
-gem 'sidekiq', '~> 5.2.7'
-gem 'sidekiq-cron', '~> 1.1.0'
-gem 'sidekiq-failures'
-gem 'themoviedb', github: 'kodolabs/themoviedb'
 gem 'bootstrap', '~> 4.0.0'
+gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3.3'
-gem 'rollbar', '~> 2.16.0'
 
-# gem 'redis', '~> 3.0'
-# gem 'bcrypt', '~> 3.1.7'
+# xml
+gem 'nokogiri'
+gem 'mechanize'
+
+# external api
+gem 'telegram-bot-ruby', '~> 0.12.0'
+gem 'themoviedb', github: 'kodolabs/themoviedb'
+
+# config
+gem 'dotenv-rails', '~> 2.7.5'
+
+# background
+gem 'sidekiq', '~> 5.2.7'
+gem 'sidekiq-cron', '~> 1.2.0'
+gem 'sidekiq-failures'
+
+# helpers
+gem 'rollbar', '~> 2.24.0'
 
 group :development, :test do
   gem 'byebug'
@@ -47,6 +60,7 @@ group :test do
 end
 
 group :development do
+  gem 'sqlite3', '~> 1.3.13'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -61,4 +75,3 @@ group :development do
   gem 'capistrano-passenger',     require: false
   gem 'capistrano-sidekiq',       require: false
 end
-
