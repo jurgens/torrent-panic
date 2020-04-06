@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.6'
+ruby '2.6.3'
 
 gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
