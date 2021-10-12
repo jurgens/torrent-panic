@@ -15,7 +15,7 @@ gem 'bootsnap'
 gem 'pg', '~> 1.2.3'
 
 # web server
-gem 'puma', '~> 4.3.3'
+gem 'puma', '~> 4.3.9'
 
 # frontend
 gem 'mini_racer'
